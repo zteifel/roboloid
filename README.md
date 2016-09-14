@@ -11,7 +11,11 @@ Compile C SDK
 
 `sudo make reinstall` or `sudo make install`
 
-run include_sdk.m in matlab.
+prepare usb (no driver needed for kernel 2.6+)
+
+../tools/usb_prep_linux
+
+run include_sdk.m in ./tools.
 
 ## Windows
 
