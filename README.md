@@ -13,7 +13,7 @@ Compile C SDK
 
 prepare usb (no driver needed for kernel 2.6+)
 
-../tools/usb_prep_linux
+`../tools/usb_prep_linux`
 
 run include_sdk.m in ./tools.
 
