@@ -9,10 +9,11 @@ Compile C SDK
 `sudo make clean && sudo make`
 `sudo make reinstall` or `sudo make install`
 
+run include_sdk.m in matlab.
+
 ## Windows
 
-Nothing yet
+-Nothing yet
 
 
 
-run include_sdk.m in matlab.
