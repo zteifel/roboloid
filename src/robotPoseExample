@@ -1,0 +1,3 @@
+% Example of structure for robot poses
+
+startingPose = [188 831 243 765 513 0 347 651 500 524 516 507 523 501 511 513 498 522];
