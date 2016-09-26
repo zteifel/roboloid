@@ -1,0 +1,1453 @@
+<!--?xml version="1.0" encoding="utf-8" ?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="en-US">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>AX-12/AX-12+/AX-12A</title>
+<link rel="StyleSheet" href="dynamixel_addresses_files/default.css" type="text/css">
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="JavaScript">//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]></script>
+<script type="text/javascript" language="javascript1.2" src="dynamixel_addresses_files/whmsg.js" charset="utf-8"></script>
+<script type="text/javascript" language="javascript" src="dynamixel_addresses_files/whver.js" charset="utf-8"></script>
+<script type="text/javascript" language="javascript1.2" src="dynamixel_addresses_files/whutils.js" charset="utf-8"></script>
+<script type="text/javascript" language="javascript1.2" src="dynamixel_addresses_files/whproxy.js" charset="utf-8"></script>
+<script type="text/javascript" language="javascript1.2" src="dynamixel_addresses_files/whlang.js" charset="utf-8"></script>
+<script type="text/javascript" language="javascript1.2" src="dynamixel_addresses_files/whtopic.js" charset="utf-8"></script>
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//]]>
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute;
+left:0px;
+top:0px;
+z-index:4;
+visibility:hidden; }
+-->
+</style>
+<script type="text/javascript" language="javascript1.2" src="dynamixel_addresses_files/whmsg.js" charset="utf-8"></script>
+<script type="text/javascript" language="javascript" src="dynamixel_addresses_files/whver.js" charset="utf-8"></script>
+<script type="text/javascript" language="javascript1.2" src="dynamixel_addresses_files/whutils.js" charset="utf-8"></script>
+<script type="text/javascript" language="javascript1.2" src="dynamixel_addresses_files/whproxy.js" charset="utf-8"></script>
+<script type="text/javascript" language="javascript1.2" src="dynamixel_addresses_files/whlang.js" charset="utf-8"></script>
+<script type="text/javascript" language="javascript1.2" src="dynamixel_addresses_files/whtopic.js" charset="utf-8"></script>
+
+</head>
+
+<body><script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.gbWhTopic)
+{
+	var strUrl = document.location.href;
+	var bc = 0;
+	var n = strUrl.toLowerCase().indexOf("bc-");
+	if(n != -1)
+	{
+		document.location.replace(strUrl.substring(0, n));
+		bc = strUrl.substring(n+3);
+	}
+
+	if (window.addTocInfo)
+	{
+	addTocInfo("Product Information\nDynamixel\nAX Series\nAX-12/ AX-12+/ AX-12A");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	
+	document.write("<p style=\"text-align:right\"> ");
+AddMasterBreadcrumbs("../../../techsupport_eng.htm", "", ">", "Home", "../../../home.htm");
+document.write("<a href=\"../../../product_manual.htm\">Product Information<\/a> > <a href=\"../../dxl_main.htm\">Dynamixel<\/a> > <a href=\"../dxl_ax_main.htm\">AX Series<\/a> > AX-12/ AX-12+/ AX-12A<\/p>");
+
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+
+onLoadHandler = function()
+{
+  if (window.setRelStartPage)
+	{
+	setTimeout("setRelStartPage('../../../techsupport_eng.htm');", 1)
+
+    setTimeout("UpdateBreadCrumbsMarker();", 1);
+	}
+}
+
+if (window.addEventListener){  
+	window.addEventListener('load', onLoadHandler, false);   
+} else if (window.attachEvent){  
+	window.attachEvent('onload', onLoadHandler);  
+}
+
+function onSetStartPage()
+{
+  autoSync(1);
+  sendSyncInfo();
+  sendAveInfoOut();
+}
+//-->
+//]]></script><style type="text/css">.whtbtnshow{font-family:;font-size:10pt;font-style:;font-weight:;text-decoration:;color:;}</style><table width="100%"><tbody><tr><td width="33%"><div align="left"><table border="0" cellpadding="2" cellspacing="0"><tbody><tr><td><a title="Show Navigation Component" class="whtbtnshow" href="javascript:void(0);" onclick="show();return false;">Show</a>&nbsp;</td></tr></tbody></table></div></td></tr></tbody></table><p style="text-align:right"> <span id="brseq0"><a style="" href="http://support.robotis.com/en/home.htm">Home</a> &gt; </span><a href="http://support.robotis.com/en/product_manual.htm">Product Information</a> &gt; <a href="http://support.robotis.com/en/product/dxl_main.htm">Dynamixel</a> &gt; <a href="http://support.robotis.com/en/product/dynamixel/dxl_ax_main.htm">AX Series</a> &gt; AX-12/ AX-12+/ AX-12A</p>
+<script type="text/javascript" src="dynamixel_addresses_files/ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<!--?rh-region_start id="header" style="width: 100%; position: relative;" ?-->
+	<p style="color: #808080; font-style: normal; font-weight: normal;">ROBOTIS 
+ e-Manual&nbsp;v1.25<span style="font-style: normal; font-weight: normal;"><font color="#808080">.00</font></span></p>
+<!--?rh-region_end ?-->
+<h1>AX-12/ AX-12+/ AX-12A</h1>
+<h2 style="font-weight: normal;">Part Photo</h2>
+<p style="text-align: center;"><img src="dynamixel_addresses_files/ax-12_figure.png" alt="" style="border: none;" height="188" width="168" border="0"><img src="dynamixel_addresses_files/ax-12a.png" alt="" style="border: none;" height="188" width="169" border="0"></p>
+<p style="text-align: center; font-weight: bold;">[AX-12/12+] 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[AX-12A]</p>
+<p>&nbsp;</p>
+<p>※ AX-12+ is the improved version of existing AX-12; the design of circuit, 
+ material, and wheel gear are specially improved.</p>
+<p>※ AX-12A is a new version of the AX-12+ with the same performance but 
+ more advanced external design. Only the AX-12A is now being sold.</p>
+<p>&nbsp;</p>
+<h2>H/W Specification</h2>
+<ul style="list-style: disc;">
+	<li>Weight : 53.5g (AX-12/AX-12+), 54.6g (AX-12A)</li>
+	<li>Dimension : 32mm * 50mm * 40mm</li>
+	<li><p>Resolution : 0.29°</p></li>
+	<li><p>Gear Reduction Ratio : &nbsp;254 : 1</p></li>
+	<li>Stall Torque : 1.5N.m (at 12.0V, 1.5A)</li>
+	<li>No load speed : 59rpm (at 12V)</li>
+	<li>Running Degree</li>
+</ul>
+<p style="margin-left: 60px; text-indent: -20px;"><span style="font-family: Wingdings;">§</span><span style="word-spacing: normal; font: 6.0pt 'Times New Roman';"><font style="font-size:6pt;" size="1"><font style="font-size: 6pt;" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></font></span>0° 
+ ~ 300°</p>
+<p style="margin-left: 60px; text-indent: -20px;"><span style="font-family: Wingdings;">§</span><span style="word-spacing: normal; font: 6.0pt 'Times New Roman';"><font style="font-size:6pt;" size="1"><font style="font-size: 6pt;" size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></font></span>Endless 
+ Turn</p>
+<ul style="list-style: disc;">
+	<li>Running Temperature : -5℃ ~ +70℃</li>
+	<li>Voltage : 9 &nbsp;~ 12V (Recommended Voltage 11.1V)</li>
+	<li>Command Signal : Digital Packet</li>
+	<li>Protocol Type : Half duplex Asynchronous Serial Communication (8bit,1stop,No 
+	 Parity)</li>
+	<li>Link (Physical) : TTL Level Multi Drop (daisy chain type Connector)</li>
+	<li>ID : 254 ID (0~253)</li>
+	<li>Communication Speed : 7343bps ~ 1 Mbps</li>
+	<li>Feedback : Position, Temperature, Load, Input Voltage, etc.</li>
+	<li>Material : Engineering Plastic</li>
+</ul>
+<p>&nbsp;</p>
+<table class="InfoTable" style="top: 70px; left: 0px;" width="635" cellspacing="0px">
+	<colgroup>	<col style="width: 100%;">
+	</colgroup>
+	<tbody><tr>
+		<td><p style="font-weight: normal; color: #000000;">Stall torque 
+		 is the maximum instantaneous and static &nbsp;torque</p>
+		<p style="font-weight: normal; color: #000000;">Stable motions 
+		 are possible with robots designed for loads with 1/5 or less of 
+		 the stall torque</p></td>
+	</tr>
+</tbody></table>
+<p>&nbsp;</p>
+<p style="margin-left: 40px;">&nbsp;</p>
+<h2>Control Table</h2>
+<div>
+	<p style="font-size: 9pt;">Control Table consists of data regarding 
+	 the current status and operation, which exists inside of Dynamixel. 
+	 The user can control Dynamixel by changing data of Control Table via 
+	 Instruction Packet.</p>
+	<p style="font-weight: bold; margin-left: 0px; font-size: 9pt;">EEPROM 
+	 and RAM</p>
+	<p style="margin-left: 40px; font-size: 9pt;">Data in RAM area is reset 
+	 to the initial value whenever the power is turned on while data in 
+	 EEPROM area is kept once the value is set even if the power is turned 
+	 off.</p>
+	<p style="margin-left: 0px; font-weight: bold; font-size: 9pt;">Address</p>
+	<p style="margin-left: 40px; font-size: 9pt;">It represents the location 
+	 of data. To read from or write data to Control Table, the user should 
+	 assign the correct address in the Instruction Packet.</p>
+	<p style="margin-left: 0px; font-weight: bold; font-size: 9pt;">Access</p>
+	<p style="margin-left: 40px; font-size: 9pt;">Dynamixel has two kinds 
+	 of data: Read-only data, which is mainly used for sensing, and Read-and-Write 
+	 data, which is used for driving.</p>
+	<p style="margin-left: 0px; font-weight: bold; font-size: 9pt;">Initial 
+	 Value </p>
+	<p style="margin-left: 40px; font-size: 9pt;">In case of data in the 
+	 EEPROM Area, the initial values on the right side of the below Control 
+	 Table are the factory default settings. In case of data in the RAM 
+	 Area, the initial values on the right side of the above Control Tables 
+	 are the ones when the power is turned on.</p>
+	<p style="margin-left: 0px; font-weight: bold; font-size: 9pt;">Highest/Lowest 
+	 Byte</p>
+	<p style="margin-left: 40px; font-size: 9pt;">In the Control table, 
+	 some data share the same name, but they are attached with (L) or (H) 
+	 at the end of each name to distinguish the address. This data requires 
+	 16bit, but it is divided into 8bit each for the addresses (low) and 
+	 (high). These two addresses should be written with one Instruction 
+	 Packet at the same time.</p>
+</div>
+<p>&nbsp;</p>
+<div style="text-align: center;">
+	<div style="text-align: left;">
+		<div style="text-align: left;">
+			<table width="772" cellspacing="0">
+				<colgroup><col style="width: 5.449%;">
+				<col style="width: 10.11%;">
+				<col style="width: 23.968%;">
+				<col style="width: 37.088%;">
+				<col style="width: 8.177%;">
+				<col style="width: 12.694%;">
+				</colgroup><tbody><tr>
+					<td style="border: Solid 1px #000000;" bgcolor="#C0C0C0"><p style="text-align: center;"><span style="font-weight: bold;">Area</span></p></td>
+					<td style="border-top: Solid 1px #000000; border-right: Solid 1px #000000; 
+						 border-bottom: Solid 1px #000000;" bgcolor="#C0C0C0"><p style="text-align: center; font-weight: bold;">Address 
+					 (Hexadecimal)</p></td>
+					<td style="border-top: Solid 1px #000000; border-right: Solid 1px #000000; 
+						 border-bottom: Solid 1px #000000;" bgcolor="#C0C0C0"><p style="text-align: center; font-weight: bold;">Name</p></td>
+					<td style="border-top: Solid 1px #000000; border-right: Solid 1px #000000; 
+						 border-bottom: Solid 1px #000000;" bgcolor="#C0C0C0"><p style="text-align: center; font-weight: bold;">Description</p></td>
+					<td style="border-top: Solid 1px #000000; border-right: Solid 1px #000000; 
+						 border-bottom: Solid 1px #000000;" bgcolor="#C0C0C0"><p style="text-align: center; font-weight: bold;">Access</p></td>
+					<td style="border-top: Solid 1px #000000; border-right: Solid 1px #000000; 
+						 border-bottom: Solid 1px #000000;" bgcolor="#C0C0C0"><p style="text-align: center; font-weight: bold;">Initial 
+					 Value</p>
+					<p style="text-align: center; font-weight: bold;">(Hexadecimal)</p></td>
+				</tr>
+				<tr>
+					<td rowspan="18" style="border-left: Solid 1px #000000; 
+						 border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">E</p>
+					<p style="text-align: center;">E</p>
+					<p style="text-align: center;">P</p>
+					<p style="text-align: center;">R</p>
+					<p style="text-align: center;">O</p>
+					<p style="text-align: center;">M</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">0 (0X00)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_00">Model 
+					 Number(L)</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Lowest byte of model 
+					 number</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">R</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">12 (0X0C)</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">1 (0X01)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_00">Model 
+					 Number(H)</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Highest byte of model 
+					 number</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">R</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">0 (0X00)</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">2 (0X02)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_02">Version 
+					 of Firmware</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Information on the 
+					 version of firmware</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">R</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">-</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">3 (0X03)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_03">ID</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">ID of Dynamixel</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">RW</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">1 (0X01)</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">4 (0X04)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_04">Baud 
+					 Rate</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Baud Rate of Dynamixel</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">RW</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">1 (0X01)</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">5 (0X05)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_05">Return 
+					 Delay Time</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Return Delay Time</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">RW</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">250 (0XFA)</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">6 (0X06)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_06">CW 
+					 Angle Limit(L)</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Lowest byte of clockwise 
+					 Angle Limit</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">RW</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">0 (0X00)</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">7 (0X07)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_06">CW 
+					 Angle Limit(H)</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Highest byte of clockwise 
+					 Angle Limit</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">RW</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">0 (0X00)</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">8 (0X08)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_06">CCW 
+					 Angle Limit(L)</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Lowest byte of counterclockwise 
+					 Angle Limit</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">RW</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">255 (0XFF)</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">9 (0X09)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_06">CCW 
+					 Angle Limit(H)</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Highest byte of counterclockwise 
+					 Angle Limit</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">RW</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">3 (0X03)</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">11 (0X0B)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_0B">the 
+					 Highest Limit Temperature</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Internal Limit Temperature</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">&nbsp;RW</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">70 (0X46)</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">12 (0X0C)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_0C">the 
+					 Lowest Limit Voltage</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Lowest Limit Voltage</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">RW</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">60 (0X3C)</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">13 (0X0D)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_0C">the 
+					 Highest Limit Voltage</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Highest Limit Voltage</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">RW</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">140 (0XBE)</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">14 (0X0E)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_0E">Max 
+					 Torque(L)</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Lowest byte of Max. 
+					 Torque</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">RW</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">255 (0XFF)</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">15 (0X0F)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_0E">Max 
+					 Torque(H)</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Highest byte of Max. 
+					 Torque</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">RW</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">3 (0X03)</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">16 (0X10)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_10">Status 
+					 Return Level</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Status Return Level</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">RW</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">2 (0X02)</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">17 (0X11)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_11">Alarm 
+					 LED</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">LED for Alarm</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">RW</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">36(0x24)</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">18 (0X12)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_12">Alarm 
+					 Shutdown</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Shutdown for Alarm</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">RW</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">36(0x24)</p></td>
+				</tr>
+				<tr>
+					<td rowspan="25" style="border-left: Solid 1px #000000; 
+						 border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">R</p>
+					<p style="text-align: center;">A</p>
+					<p style="text-align: center;">M</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">24 (0X18)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_18">Torque 
+					 Enable</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Torque On/Off</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">RW</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">0 (0X00)</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">25 (0X19)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_19">LED</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">LED On/Off</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">RW</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">0 (0X00)</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">26 (0X1A)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_1A">CW 
+					 Compliance Margin</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">CW Compliance margin</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">RW</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">1 (0X01)</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">27 (0X1B)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_1A">&nbsp;CCW 
+					 Compliance Margin</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">CCW Compliance margin</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">RW</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">1 (0X01)</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">28 (0X1C)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_1A">CW 
+					 Compliance Slope</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">CW Compliance slope</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">RW</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">32 (0X20)</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">29 (0X1D)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_1A">CCW 
+					 Compliance Slope</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">CCW Compliance slope</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">RW</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">32 (0X20)</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">30 (0X1E)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_1E">Goal 
+					 Position(L)</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Lowest byte of Goal 
+					 Position</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">RW</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">-</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">31 (0X1F)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_1E">Goal 
+					 Position(H)</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Highest byte of Goal 
+					 Position</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">RW</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">-</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">32 (0X20)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_20">Moving 
+					 Speed(L)</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Lowest byte of Moving 
+					 Speed (Moving Velocity)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">RW</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">-</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">33 (0X21)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_20">Moving 
+					 Speed(H)</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Highest byte of Moving 
+					 Speed (Moving Velocity)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">RW</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">-</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">34 (0X22)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_22">Torque 
+					 Limit(L)</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Lowest byte of Torque 
+					 Limit (Goal Torque)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">RW</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">ADD14</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">35 (0X23)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_22">Torque 
+					 Limit(H)</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Highest byte of Torque 
+					 Limit (Goal Torque)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">RW</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">ADD15</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">36 (0X24)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_24">Present 
+					 Position(L)</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Lowest byte of Current 
+					 Position (Present Velocity)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">R</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">-</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">37 (0X25)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_24">Present 
+					 Position(H)</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Highest byte of Current 
+					 Position (Present Velocity)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">R</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">-</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">38 (0X26)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_26">Present 
+					 Speed(L)</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Lowest byte of Current 
+					 Speed</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">R</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">-</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">39 (0X27)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_28">Present 
+					 Speed(H)</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Highest byte of Current 
+					 Speed</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">R</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">-</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">40 (0X28)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_28">Present 
+					 Load(L)</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Lowest byte of Current 
+					 Load</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">R</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">-</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">41 (0X29)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_28">Present 
+					 Load(H)</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Highest byte of Current 
+					 Load</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">R</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">-</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">42 (0X2A)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_2A">Present 
+					 Voltage</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Current Voltage</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">R</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">-</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">43 (0X2B)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_2B">Present 
+					 Temperature</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Current Temperature</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">R</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">-</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">44 (0X2C)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_2C">Registered</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Means if Instruction 
+					 is registered</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">R</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">0 (0X00)</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">46 (0X2E)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_2E">Moving</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Means if there is 
+					 any movement</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">R</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">0 (0X00)</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">47 (0X2F)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_2F">Lock</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Locking EEPROM</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">RW</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">0 (0X00)</p></td>
+				</tr>
+				<tr>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">48 (0X30)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_30">Punch(L)</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Lowest byte of Punch</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">RW</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">32 (0X20)</p></td>
+				</tr>
+				<tr style="height: 0px;">
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">49 (0X31)</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;"><a href="#Actuator_Address_30">Punch(H)</a></p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">Highest byte of Punch</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">RW</p></td>
+					<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000;"><p style="text-align: center;">0 (0X00)</p></td>
+				</tr>
+			</tbody></table>
+		</div>
+	</div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>Address Function Help</h2>
+<h3>EEPROM Area</h3>
+<p style="font-weight: bold;"><span style="font-weight: bold;">Model Number 
+ <a name="Actuator_Address_00" id="Actuator_Address_00"></a></span></p>
+<div>
+	<p>It represents the Model Number.</p>
+</div>
+<p style="font-weight: bold;">&nbsp;</p>
+<p style="font-weight: bold;">Firmware Version <a name="Actuator_Address_02" id="Actuator_Address_02"></a></p>
+<div>
+	<p style="margin-left: 0px;">It represents the firmware version.</p>
+</div>
+<p style="font-weight: bold;">&nbsp;</p>
+<p style="font-weight: bold;">ID <a name="Actuator_Address_03" id="Actuator_Address_03"></a></p>
+<div>
+	<p class="MsoNormal" style="margin-top: 0pt; margin-bottom: 0pt; font-size: 9pt; 
+		 line-height: 21.60000228881836px; color: #000000; font-family: Gulim; 
+		 font-style: normal; font-variant: normal; font-weight: normal; 
+		 letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; 
+		 text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; 
+		 -webkit-text-stroke-width: 0px;"><span style="line-height: 21.60000228881836px; 
+												 font-family: Gulim; font-style: normal; 
+												 font-variant: normal; 
+												 font-weight: normal; letter-spacing: normal; 
+												 orphans: auto; text-transform: none; 
+												 white-space: normal; widows: auto; 
+												 word-spacing: 0px; -webkit-text-stroke-width: 0px;"><font style="font-size: 9.000000pt;" color="#000000" size="2"><span>I</span>t 
+	 is a unique number to identify Dynamixel.</font></span></p>
+	<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 9pt; line-height: 21.60000228881836px; 
+		 color: #000000; font-family: Gulim; font-style: normal; font-variant: normal; 
+		 font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; 
+		 text-indent: 0px; text-transform: none; white-space: normal; widows: auto; 
+		 word-spacing: 0px; -webkit-text-stroke-width: 0px;">The range 
+	 from 0 to 252 (0xFC) can be used, and, especially, 254(0xFE) is used 
+	 as the Broadcast ID.<br>
+	If the Broadcast ID is used to transmit Instruction Packet, we can 
+	 command to all Dynamixels.</p>
+	<p style="margin-top: 0pt; margin-bottom: 0pt; font-size: 9pt; line-height: 21.60000228881836px; 
+		 color: #000000; font-family: Gulim; font-style: normal; font-variant: normal; 
+		 font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; 
+		 text-indent: 0px; text-transform: none; white-space: normal; widows: auto; 
+		 word-spacing: 0px; -webkit-text-stroke-width: 0px;">&nbsp;</p>
+	<table class="InfoTable" style="left: 0px; top: 70px;" width="543" cellspacing="0px">
+		<colgroup><col style="width: 100%;">
+		</colgroup><tbody><tr>
+			<td>Please be careful not to duplicate the ID of connected 
+			 Dynamixel.</td>
+		</tr>
+	</tbody></table>
+</div>
+<p style="font-weight: bold; margin-left: 40px;">&nbsp;</p>
+<p style="font-weight: bold;">Baud Rate <a name="Actuator_Address_04" id="Actuator_Address_04"></a></p>
+<div>
+	<p style="margin-left: 0px;">It represents the communication speed. 
+	 0 to 254 (0xFE) can be used for it. </p>
+	<p style="margin-left: 0px;">This speed is calculated by using the 
+	 below formula.</p>
+	<p style="margin-left: 0px;">Speed(BPS) &nbsp;= 2000000/(Data+1)</p>
+	<table style="border-collapse: separate; border-collapse: separate;" width="400" border="1" cellspacing="0">
+		<colgroup><col style="width: 21.694%;">
+		<col style="width: 27.926%;">
+		<col style="width: 29.205%;">
+		<col style="width: 27.01%;">
+		</colgroup><tbody><tr>
+			<td bgcolor="#FFFFA8"><p style="text-align: center; font-weight: bold;">Data</p></td>
+			<td bgcolor="#FFFFA8"><p style="text-align: center; font-weight: bold;">Set 
+			 BPS</p></td>
+			<td bgcolor="#FFFFA8"><p style="text-align: center; font-weight: bold;">Target 
+			 BPS</p></td>
+			<td bgcolor="#FFFFA8"><p style="text-align: center; font-weight: bold;">Tolerance</p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">1</p></td>
+			<td><p style="text-align: right;">&nbsp;&nbsp;&nbsp;&nbsp;1000000.0 
+			 &nbsp;</p></td>
+			<td><p style="text-align: right;">&nbsp;&nbsp;&nbsp;&nbsp;1000000.0 
+			 &nbsp;</p></td>
+			<td><p style="text-align: right;">&nbsp;&nbsp;0.000 %</p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">3</p></td>
+			<td><p style="text-align: right;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;500000.0 
+			 &nbsp;</p></td>
+			<td><p style="text-align: right;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;500000.0 
+			 &nbsp;</p></td>
+			<td><p style="text-align: right;">&nbsp;&nbsp;0.000 %</p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">4</p></td>
+			<td><p style="text-align: right;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;400000.0 
+			 &nbsp;</p></td>
+			<td><p style="text-align: right;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;400000.0 
+			 &nbsp;</p></td>
+			<td><p style="text-align: right;">&nbsp;&nbsp;0.000 %</p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">7</p></td>
+			<td><p style="text-align: right;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;250000.0 
+			 &nbsp;</p></td>
+			<td><p style="text-align: right;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;250000.0 
+			 &nbsp;</p></td>
+			<td><p style="text-align: right;">&nbsp;&nbsp;0.000 %</p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">9</p></td>
+			<td><p style="text-align: right;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;200000.0 
+			 &nbsp;</p></td>
+			<td><p style="text-align: right;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;200000.0 
+			 &nbsp;</p></td>
+			<td><p style="text-align: right;">&nbsp;&nbsp;0.000 %</p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">16</p></td>
+			<td><p style="text-align: right;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;117647.1</p></td>
+			<td><p style="text-align: right;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;115200.0 
+			 &nbsp;</p></td>
+			<td><p style="text-align: right;">&nbsp;-2.124 %</p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">34</p></td>
+			<td><p style="text-align: right;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;57142.9</p></td>
+			<td><p style="text-align: right;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;57600.0 
+			 &nbsp;</p></td>
+			<td><p style="text-align: right;">&nbsp;&nbsp;0.794 %</p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">103</p></td>
+			<td><p style="text-align: right;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;19230.8</p></td>
+			<td><p style="text-align: right;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;19200.0 
+			 &nbsp;</p></td>
+			<td><p style="text-align: right;">&nbsp;-0.160 %</p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">207</p></td>
+			<td><p style="text-align: right;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9615.4</p></td>
+			<td><p style="text-align: right;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9600.0 
+			 &nbsp;</p></td>
+			<td><p style="text-align: right;">&nbsp;-0.160 %</p></td>
+		</tr>
+	</tbody></table>
+	<p style="margin-left: 0px;">&nbsp;</p>
+	<table class="InfoTable" style="left: 0px; top: 1919px;" width="516" cellspacing="0px">
+		<colgroup><col style="width: 100%;">
+		</colgroup><tbody><tr>
+			<td><p>Note : Maximum Baud Rate error of 3% is within the tolerance 
+			 of UART communication.</p></td>
+		</tr>
+	</tbody></table>
+	<p style="margin-left: 0px;">&nbsp;</p>
+</div>
+<p style="margin-left: 0px;">&nbsp;</p>
+<p style="font-weight: bold;">Return Delay Time <a name="Actuator_Address_05" id="Actuator_Address_05"></a></p>
+<div>
+	<p>It is the delay time per data value that takes from the transmission 
+	 of Instruction Packet until the return of Status Packet. </p>
+	<p>0 to 254 (0xFE) can be used, and the delay time per data value is 
+	 2 usec. </p>
+	<p>That is to say, if the data value is 10, 20 usec is delayed. The 
+	 initial value is 250 (0xFA) (i.e., 0.5 msec).</p>
+</div>
+<p>&nbsp;</p>
+<p style="font-weight: bold;">CW/CCW Angle Limit <a name="Actuator_Address_06" id="Actuator_Address_06"></a></p>
+<div>
+	<p>The angle limit allows the motion to be restrained.<br>
+	The range and the unit of the value is the same as Goal Position(Address 
+	 30, 31).</p>
+	<ul style="list-style: disc;">
+		<li>CW Angle Limit: the minimum value of Goal Position(Address 
+		 30, 31)</li>
+		<li>CCW Angle Limit: the maximum value of Goal Position(Address 
+		 30, 31)</li>
+	</ul>
+	<p>The following two modes can be set pursuant to the value of CW and 
+	 CCW.</p>
+	<table style="border-collapse: separate; border-collapse: separate;" width="310" border="1" cellspacing="0">
+		<colgroup><col style="width: 39.659%;">
+		<col style="width: 60.341%;">
+		</colgroup><tbody><tr>
+			<td bgcolor="#FFFFA8"><p style="text-align: center; font-weight: bold;">Operation 
+			 Type</p></td>
+			<td bgcolor="#FFFFA8"><p style="text-align: center;"><span style="font-weight: bold;">CW / </span><span style="text-align: center; 
+															 font-weight: bold;">CCW</span></p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">Wheel Mode</p></td>
+			<td><p style="text-align: center;">&nbsp;both are 0</p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">Joint Mode</p></td>
+			<td><p style="text-align: center;">neither at 0</p></td>
+		</tr>
+	</tbody></table>
+	<p>The wheel mode can be used to wheel-type operation robots since 
+	 motors of the robots spin infinitely.</p>
+	<p>The joint mode can be used to multi-joints robot since the robots 
+	 can be controlled with specific angles.</p>
+</div>
+<p style="font-weight: bold;">&nbsp;</p>
+<p style="font-weight: bold;">The Highest Limit Temperature <a name="Actuator_Address_0B" id="Actuator_Address_0B"></a></p>
+<div>
+	<table class="InfoTable" style="left: 0px; top: 1919px;" width="600" cellspacing="0px">
+		<colgroup><col style="width: 100%;">
+		</colgroup><tbody><tr>
+			<td><p>Caution : Do not set the temperature lower/higher than 
+			 the default value.</p>
+			<p>When the temperature alarm shutdown occurs, wait 20 minutes 
+			 to cool the temperature before re-use.</p>
+			<p>Using the product when the temperature is high may and can 
+			 cause damage.</p></td>
+		</tr>
+	</tbody></table>
+</div>
+<p style="margin-left: 40px;">&nbsp;</p>
+<p style="font-weight: bold;">The Lowest (Highest) Limit Voltage <a name="Actuator_Address_0C" id="Actuator_Address_0C"></a></p>
+<div>
+	<p style="font-size: 9pt; font-family: Arial, sans-serif;">It is the 
+	 operation range of voltage. </p>
+	<p style="font-size: 9pt; font-family: Arial, sans-serif;">50 to 250 
+	 (0x32 ~ 0x96) can be used. &nbsp;The unit is <span>0.1V.</span></p>
+	<p style="font-size: 9pt; font-family: Arial, sans-serif;">For example, 
+	 if the value is 80, it is 8V.</p>
+	<p style="font-size: 9pt; font-family: Arial, sans-serif;">If Present 
+	 Voltage (Address42) is out of the range, Voltage Range Error Bit (Bit0) 
+	 of Status Packet is returned as ‘1’ and Alarm is triggered as set 
+	 in the addresses 17 and 18.</p>
+</div>
+<p style="margin-left: 40px;">&nbsp;</p>
+<p style="font-weight: bold; margin-left: 0px;">Max Torque <a name="Actuator_Address_0E" id="Actuator_Address_0E"></a></p>
+<div>
+	<p style="margin-left: 0px;">It is the torque value of maximum output. 
+	 0 to 1023 (0x3FF) can be used, and the unit is about 0.1%. </p>
+	<p style="margin-left: 0px;">For example, Data 1023 (0x3FF) means that 
+	 Dynamixel will use 100% of the maximum torque it can produce while 
+	 Data 512 (0x200) means that Dynamixel will use 50% of the maximum 
+	 torque. When the power is turned on, Torque Limit (Addresses 34 and 
+	 35) uses the value as the initial value.</p>
+</div>
+<p style="font-weight: bold;">&nbsp;</p>
+<p style="font-weight: bold;">Status Return Level <a name="Actuator_Address_10" id="Actuator_Address_10"></a></p>
+<div>
+	<p style="margin-left: 0px;">It decides how to return Status Packet. 
+	 There are three ways like the below table.</p>
+	<table style="border-collapse: separate; border-collapse: separate;" width="500" border="1" cellspacing="0">
+		<colgroup><col style="width: 24.182%;">
+		<col style="width: 75.818%;">
+		</colgroup><tbody><tr>
+			<td bgcolor="#FFFFA8"><p style="text-align: center; font-weight: bold;">Value</p></td>
+			<td bgcolor="#FFFFA8"><p style="text-align: center; font-weight: bold;">Return 
+			 of Status Packet</p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">0</p></td>
+			<td><p style="text-align: center;">&nbsp;&nbsp;No return against 
+			 all commands (Except PING Command)</p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">1</p></td>
+			<td><p style="text-align: center;">&nbsp;&nbsp;Return only 
+			 for the READ command</p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">2</p></td>
+			<td><p style="text-align: center;">&nbsp;&nbsp;Return for all 
+			 commands</p></td>
+		</tr>
+	</tbody></table>
+	<p style="margin-left: 40px;">&nbsp;</p>
+	<table class="InfoTable" style="left: 0px; top: 1919px;" width="700" cellspacing="0px">
+		<colgroup><col style="width: 100%;">
+		</colgroup><tbody><tr>
+			<td><p>When Instruction Packet is Broadcast ID, Status Packet 
+			 is not returned regardless of Status Return Level.</p></td>
+		</tr>
+	</tbody></table>
+</div>
+<p style="margin-left: 0px;">&nbsp;</p>
+<p style="font-weight: bold;">Alarm LED <a name="Actuator_Address_11" id="Actuator_Address_11"></a></p>
+<p style="font-weight: bold;"><span style="font-weight: bold;">Alarm Shutdown 
+ <a name="Actuator_Address_12" id="Actuator_Address_12"></a></span></p>
+<div>
+	<p style="margin-left: 0px;">Dynamixel can protect itself by detecting 
+	 errors occur during the operation. &nbsp;</p>
+	<p style="margin-left: 0px;">The errors can be set are as the table 
+	 below.</p>
+	<p style="margin-left: 0px;">&nbsp;</p>
+	<table style="border-collapse: separate; border-collapse: separate;" width="700" border="1" cellspacing="0">
+		<colgroup><col style="width: 6.852%;">
+		<col style="width: 17.4%;">
+		<col style="width: 75.748%;">
+		</colgroup><tbody><tr>
+			<td bgcolor="#FFFFA8"><p style="text-align: center; font-weight: bold;">Bit</p></td>
+			<td bgcolor="#FFFFA8"><p style="text-align: center; font-weight: bold;">Name</p></td>
+			<td bgcolor="#FFFFA8"><p style="text-align: center; font-weight: bold;">Contents</p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">Bit 7</p></td>
+			<td><p style="text-align: center;">0</p></td>
+			<td><p style="text-align: center;">-</p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">Bit 6</p></td>
+			<td><span style="line-height: normal; orphans: auto; widows: auto; 
+						 -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+						 display: inline	 ! important ; float: none;">Instruction&nbsp;Error</span><span> 
+			 </span></td>
+			<td><p style="line-height: 21.60000228881836px; orphans: auto; 
+					 widows: auto; -webkit-text-stroke-width: 0px; background-color: #ffffff;">When 
+			 undefined Instruction is transmitted or the Action command 
+			 is delivered without</p>
+			<p style="line-height: 21.60000228881836px; orphans: auto; 
+				 widows: auto; -webkit-text-stroke-width: 0px; background-color: #ffffff;">&nbsp;&nbsp;the 
+			 reg_write command</p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">Bit 5</p></td>
+			<td><span style="line-height: normal; orphans: auto; widows: auto; 
+						 -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+						 display: inline	 ! important ; float: none;">Overload&nbsp;Error</span><span> 
+			 </span></td>
+			<td><span style="line-height: 21.60000228881836px; orphans: auto; 
+						 widows: auto; -webkit-text-stroke-width: 0px; 
+						 background-color: #ffffff; display: inline	 ! important ; 
+						 float: none;">When the current load cannot be 
+			 controlled with the set maximum torque</span><span> </span></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">Bit 4</p></td>
+			<td><span style="line-height: normal; orphans: auto; widows: auto; 
+						 -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+						 display: inline	 ! important ; float: none;">CheckSum&nbsp;Error</span><span> 
+			 </span></td>
+			<td><span style="line-height: 21.60000228881836px; orphans: auto; 
+						 widows: auto; -webkit-text-stroke-width: 0px; 
+						 background-color: #ffffff; display: inline	 ! important ; 
+						 float: none;">When the Checksum of the transmitted 
+			 Instruction Packet is invalid</span><span> </span></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">Bit 3</p></td>
+			<td><span style="line-height: normal; orphans: auto; widows: auto; 
+						 -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+						 display: inline	 ! important ; float: none;">Range&nbsp;Error</span><span> 
+			 </span></td>
+			<td><span style="line-height: 21.60000228881836px; orphans: auto; 
+						 widows: auto; -webkit-text-stroke-width: 0px; 
+						 background-color: #ffffff; display: inline	 ! important ; 
+						 float: none;">When the command is given beyond 
+			 the range of usage</span><span> </span></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">Bit 2</p></td>
+			<td><span style="line-height: normal; orphans: auto; widows: auto; 
+						 -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+						 display: inline	 ! important ; float: none;">OverHeating&nbsp;Error</span><span> 
+			 </span></td>
+			<td><p style="line-height: 21.60000228881836px; orphans: auto; 
+					 widows: auto; -webkit-text-stroke-width: 0px; background-color: #ffffff;">When 
+			 the internal temperature is out of the range of operating 
+			 temperature set in</p>
+			<p style="line-height: 21.60000228881836px; orphans: auto; 
+				 widows: auto; -webkit-text-stroke-width: 0px; background-color: #ffffff;">&nbsp;&nbsp;the 
+			 Control Table</p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">Bit 1</p></td>
+			<td><span style="line-height: normal; orphans: auto; widows: auto; 
+						 -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+						 display: inline	 ! important ; float: none;">Angle 
+			 Limit&nbsp;Error</span><span> </span></td>
+			<td><p style="line-height: 21.60000228881836px; orphans: auto; 
+					 widows: auto; -webkit-text-stroke-width: 0px; background-color: #ffffff;">&nbsp;When 
+			 Goal Position is written with the value that is not between 
+			 CW Angle Limit and CCW</p>
+			<p style="line-height: 21.60000228881836px; orphans: auto; 
+				 widows: auto; -webkit-text-stroke-width: 0px; background-color: #ffffff;">&nbsp;&nbsp;Angle 
+			 Limit</p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">Bit 0</p></td>
+			<td><span style="line-height: normal; orphans: auto; widows: auto; 
+						 -webkit-text-stroke-width: 0px; background-color: #ffffff; 
+						 display: inline	 ! important ; float: none;">Input 
+			 Voltage Error</span><span> </span></td>
+			<td><span style="line-height: 21.60000228881836px; orphans: auto; 
+						 widows: auto; -webkit-text-stroke-width: 0px; 
+						 background-color: #ffffff; display: inline	 ! important ; 
+						 float: none;">&nbsp;When the applied voltage is 
+			 out of the range of operating voltage set in the Control Table</span><span> 
+			 </span></td>
+		</tr>
+	</tbody></table>
+	<p style="margin-left: 0px;">&nbsp;</p>
+	<p style="margin-left: 0px;">It is possible to make duplicate set since 
+	 the function of each bit is run by &nbsp;the logic of ‘OR’. That is, 
+	 if 0X05 (binary 00000101) is set, both Input Voltage Error and Overheating 
+	 Error can be detected.</p>
+	<p style="margin-left: 0px;">If errors occur, in case of Alarm LED, 
+	 the LED blinks; in case of Alarm Shutdown, the motor output becomes 
+	 0 % by making the value of Torque Limit(Address 34, 35) as 0.</p>
+</div>
+&nbsp;&nbsp; 
+<h2 style="font-weight: normal;">RAM Area</h2>
+<p>&nbsp;</p>
+<p style="font-weight: bold;">Torque Enable <a name="Actuator_Address_18" id="Actuator_Address_18"></a></p>
+<div>
+	<table style="border-collapse: separate; border-collapse: separate;" width="429" border="1" cellspacing="0">
+		<colgroup><col style="width: 12.11%;">
+		<col style="width: 87.89%;">
+		</colgroup><tbody><tr>
+			<td bgcolor="#FFFFA8"><p style="text-align: center; font-weight: bold;">Value</p></td>
+			<td bgcolor="#FFFFA8"><p style="text-align: center; font-weight: bold;">Meaning</p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">0</p></td>
+			<td><p>&nbsp;Keeps Torque from generating by interrupting the 
+			 power of motor.</p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">1</p></td>
+			<td>&nbsp;Generates Torque by impressing the power to the motor.</td>
+		</tr>
+	</tbody></table>
+</div>
+<p>&nbsp;</p>
+<p style="font-weight: bold;">LED <a name="Actuator_Address_19" id="Actuator_Address_19"></a></p>
+<div>
+	<table style="border-collapse: separate; border-collapse: separate;" width="426" border="1" cellspacing="0">
+		<colgroup><col style="width: 19.685%;">
+		<col style="width: 80.315%;">
+		</colgroup><tbody><tr>
+			<td bgcolor="#FFFFA8"><p style="text-align: center;">Bit</p></td>
+			<td bgcolor="#FFFFA8"><p style="text-align: center; font-weight: bold;">Meaning</p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">0</p></td>
+			<td><p style="text-align: center;">Turn OFF the LED</p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">1</p></td>
+			<td><p style="text-align: center;">Turn ON the LED</p></td>
+		</tr>
+	</tbody></table>
+</div>
+<p>&nbsp;</p>
+<p style="font-weight: bold;">Compliance <a name="Actuator_Address_1A" id="Actuator_Address_1A"></a></p>
+<div>
+	<p style="margin-left: 0px;">Compliance is to set the control flexibility 
+	 of the motor.</p>
+	<p style="margin-left: 0px;">The following diagram shows the relationship 
+	 between output torque and position of the motor. </p>
+	<p style="margin-left: 0px;"><img src="dynamixel_addresses_files/dxl_compliance.png" alt="" style="border: none;" height="313" width="596" border="0"></p>
+	<p style="margin-left: 0px;">&nbsp;</p>
+	<h4>Compliance Margin</h4>
+	<p style="margin-left: 0px;">It exists in each direction of CW/CCW 
+	 and means the error between goal position and present position.</p>
+	<p style="margin-left: 0px;">The range of the value is 0~255, and the 
+	 unit is the same as Goal Position.(Address 30,31)</p>
+	<p style="margin-left: 0px;">The greater the value, the more difference 
+	 occurs.</p>
+	<h4>Compliance Slope</h4>
+	<p style="margin-left: 0px;">It exists in each direction of CW/CCW 
+	 and sets the level of Torque near the goal position.</p>
+	<p style="margin-left: 0px;">Compliance Slope is set in 7 steps, the 
+	 higher the value, the more flexibility is obtained.</p>
+	<p style="margin-left: 0px;"><span style="margin-left: 0px;">Data representative 
+	 value is actually used value. &nbsp;That is, even if the value is 
+	 set to 25, 16 is used internally as the representative value.</span></p>
+	<table style="border-collapse: separate; border-collapse: separate;" width="375" border="1" cellspacing="0">
+		<colgroup><col style="width: 14.643%;">
+		<col style="width: 48.443%;">
+		<col style="width: 36.915%;">
+		</colgroup><tbody><tr>
+			<td bgcolor="#FFFFA8"><p style="text-align: center; font-weight: bold;">Step</p></td>
+			<td bgcolor="#FFFFA8"><p style="text-align: center; font-weight: bold;">Data 
+			 Value</p></td>
+			<td bgcolor="#FFFFA8"><p style="text-align: center; font-weight: bold;">Data 
+			 Representative Value</p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">1</p></td>
+			<td><p style="text-align: center;">0 (0x00) ~ 3(0x03)</p></td>
+			<td><p style="text-align: center;">2 (0x02)</p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">2</p></td>
+			<td><p style="text-align: center;">4(0x04) ~ 7(0x07)</p></td>
+			<td><p style="text-align: center;">4 (0x04)</p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">3</p></td>
+			<td><p style="text-align: center;">8(0x08)~15(0x0F)</p></td>
+			<td><p style="text-align: center;">8 (0x08)</p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">4</p></td>
+			<td><p style="text-align: center;">16(0x10)~31(0x1F)</p></td>
+			<td><p style="text-align: center;">16 (0x10)</p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">5</p></td>
+			<td><p style="text-align: center;">32(0x20)~63(0x3F)</p></td>
+			<td><p style="text-align: center;">32 (0x20)</p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">6</p></td>
+			<td><p style="text-align: center;">64(0x40)~127(0x7F)</p></td>
+			<td><p style="text-align: center;">64 (0x40)</p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">7</p></td>
+			<td><p style="text-align: center;">128(0x80)~254(0xFE)</p></td>
+			<td><p style="text-align: center;">128 (0x80)</p></td>
+		</tr>
+	</tbody></table>
+	<p>&nbsp;</p>
+</div>
+<p style="margin-left: 40px;">&nbsp;</p>
+<p style="font-weight: bold;">Goal Position <a name="Actuator_Address_1E" id="Actuator_Address_1E"></a></p>
+<div>
+	<p style="margin-left: 0px;">It is a position value of destination. 
+	 </p>
+	<p style="margin-left: 0px;">0 to 1023 (0x3FF) is available. &nbsp;The 
+	 unit is 0.29 degree.</p>
+	<p style="margin-left: 0px; font-family: Arial, sans-serif;">If Goal 
+	 Position is out of the range, Angle Limit Error Bit (Bit1) of Status 
+	 Packet is returned as ‘1’ and Alarm is triggered as set in Alarm LED/Shutdown.</p>
+	<p style="margin-left: 0px;">&nbsp;</p>
+	<p style="margin-left: 0px;"><img src="dynamixel_addresses_files/dx_series_goal.png" alt="" style="border: none;" height="275" width="365" border="0"> </p>
+	<p style="margin-left: 0px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;The 
+	 picture above is based on the front of relevant model&gt;</p>
+	<p style="margin-left: 0px;">&nbsp;</p>
+	<table class="InfoTable" style="left: 0px; top: 1919px;" width="600" cellspacing="0px">
+		<colgroup><col style="width: 100%;">
+		</colgroup><tbody><tr>
+			<td><p>If it is set to Wheel Mode, this value is not used.</p></td>
+		</tr>
+	</tbody></table>
+</div>
+<p style="margin-left: 40px;">&nbsp;</p>
+<p style="margin-left: 40px;">&nbsp;</p>
+<p style="font-weight: bold;">Moving Speed <a name="Actuator_Address_20" id="Actuator_Address_20"></a></p>
+<div>
+	<p style="margin-left: 0px;">It is a moving speed to Goal Position. 
+	 </p>
+	<p>The range and the unit of the value may vary depending on the operation 
+	 mode.</p>
+	<p style="margin-left: 0px;">&nbsp;</p>
+	<ul style="list-style: disc;">
+		<li><p style="margin-left: 0px;">Join Mode<br>
+		0~1023 (0X3FF) can be used, and the unit is about 0.111rpm.<br>
+		If it is set to 0, it means the maximum rpm of the motor is used 
+		 without controlling the speed.<br>
+		If it is 1023, it is about 114rpm.<br>
+		For example, if it is set to 300, it is about 33.3 rpm.</p></li>
+	</ul>
+	<p style="margin-left: 0px;">&nbsp;</p>
+	<table class="InfoTable" style="left: 0px; top: 1919px;" width="700" cellspacing="0px">
+		<colgroup><col style="width: 100%;">
+		</colgroup><tbody><tr>
+			<td><p>Notes: Please check the maximum rpm of relevant model 
+			 in Joint Mode. &nbsp;Even if the motor is set to more than 
+			 maximum rpm, it cannot generate the torque more than the maximum 
+			 rpm.</p></td>
+		</tr>
+	</tbody></table>
+	<p style="margin-left: 0px;">&nbsp;</p>
+	<ul style="list-style: disc;">
+		<li><p style="margin-left: 0px;">Wheel Mode<br>
+		0~2047( 0X7FF) can be used, the unit is about 0.1%.<br>
+		If a value in the range of 0~1023 is used, it is stopped by setting 
+		 to 0 while rotating to CCW direction.<br>
+		If a value in the range of 1024~2047 is used, it is stopped by 
+		 setting to 1024 while rotating to CW direction.<br>
+		That is, the 10th bit becomes the direction bit to control the 
+		 direction.<br>
+		In Wheel Mode, only the output control is possible, not speed.<br>
+		For example, if it is set to 512, it means the output is controlled 
+		 by 50% of the maximum output.</p></li>
+	</ul>
+</div>
+<p>&nbsp;</p>
+<p style="font-weight: bold;">Torque Limit <a name="Actuator_Address_22" id="Actuator_Address_22"></a></p>
+<div>
+	<p>It is the value of the maximum torque limit. &nbsp;</p>
+	<p>0 to 1023 (0x3FF) is available, and the unit is about 0.1%. &nbsp;</p>
+	<p>For example, if the value is 512, it is about 50%; that means only 
+	 50% of the maximum torque will be used.<br>
+	If the power is turned on, the value of Max Torque (Address 14, 15) 
+	 is used as the initial value.</p>
+	<p>&nbsp;</p>
+	<table class="InfoTable" style="left: 0px; top: 1919px;" width="700" cellspacing="0px">
+		<colgroup><col style="width: 100%;">
+		</colgroup><tbody><tr>
+			<td><p>Notes: If the function of Alarm Shutdown is triggered, 
+			 the motor loses its torque because the value becomes 0. &nbsp;At 
+			 this moment, if the value is changed to the value other than 
+			 0, the motor can be used again.</p></td>
+		</tr>
+	</tbody></table>
+</div>
+<p>&nbsp;</p>
+<p style="font-weight: bold;">Present Position <a name="Actuator_Address_24" id="Actuator_Address_24"></a></p>
+<div>
+	<p style="margin-left: 0px;">It is the current position value of Dynamixel. 
+	 &nbsp;</p>
+	<p style="margin-left: 0px;">The range of the value is 0~1023 (0x3FF), 
+	 and the unit is 0.29 degree.</p>
+	<p style="margin-left: 0px;">&nbsp;</p>
+	<p style="margin-left: 0px;"><img src="dynamixel_addresses_files/dx_series_goal.png" alt="" style="border: none;" height="276" width="366" border="0"></p>
+	<p style="margin-left: 0px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;The 
+	 picture above is based on the front of relevant model&gt;</p>
+	<p style="margin-left: 0px;">&nbsp;</p>
+	<table class="InfoTable" style="left: 0px; top: 1919px;" width="600" cellspacing="0px">
+		<colgroup><col style="width: 100%;">
+		</colgroup><tbody><tr>
+			<td><p>Caution: If it is set to Wheel Mode, the value cannot 
+			 be used to measure the moving distance and the rotation frequency.</p></td>
+		</tr>
+	</tbody></table>
+</div>
+<p>&nbsp;</p>
+<p style="font-weight: bold;">Present Speed <a name="Actuator_Address_26" id="Actuator_Address_26"></a></p>
+<div>
+	<p style="margin-left: 0px;">It is the current moving speed.</p>
+	<p style="margin-left: 0px;">0~2047 (0X7FF) can be used.</p>
+	<p style="margin-left: 0px;">If a value is in the rage of 0~1023, it 
+	 means that the motor rotates to the CCW direction.</p>
+	<p style="margin-left: 0px;">If a value is in the rage of 1024~2047, 
+	 it means that the motor rotates to the CW direction.</p>
+	<p style="margin-left: 0px;">That is, the 10th bit becomes the direction 
+	 bit to control the direction, and 0 and 1024 are equal.</p>
+	<p style="margin-left: 0px;">The unit of this value varies depending 
+	 on operation mode. </p>
+	<ul style="list-style: disc;">
+		<li><p style="margin-left: 0px;">Joint Mode<br>
+		The unit is about 0.111rpm.<br>
+		For example, if it is set to 300, it means that the motor is moving 
+		 to the CCW direction at a rate of about 33.3rpm.</p></li>
+		<li><p style="margin-left: 0px;">Wheel Mode<br>
+		The unit is about 0.1%.<br>
+		For example, if it is set to 512, it means that the torque is controlled 
+		 by 50% of the maximum torque to the CCW direction.</p></li>
+	</ul>
+</div>
+<p style="font-weight: bold;">&nbsp;</p>
+<p style="font-weight: bold;">Present Load <a name="Actuator_Address_28" id="Actuator_Address_28"></a></p>
+<div>
+	<p style="margin-left: 0px;">It means currently applied load.</p>
+	<p style="margin-left: 0px;">The range of the value is 0~2047, and 
+	 the unit is about 0.1%.</p>
+	<p style="margin-left: 0px;">If the value is 0~1023, it means the load 
+	 works to the CCW direction.</p>
+	<p style="margin-left: 0px;">If the value is 1024~2047, it means the 
+	 load works to the CW direction.</p>
+	<p style="margin-left: 0px;">That is, the 10th bit becomes the direction 
+	 bit to control the direction, and 1024 is equal to 0.</p>
+	<p style="margin-left: 0px;">For example, the value is 512, it means 
+	 the load is detected in the direction of CCW about 50% of the maximum 
+	 torque.</p>
+	<p style="margin-left: 0px;">&nbsp;</p>
+	<p style="margin-left: 0px;"><img src="dynamixel_addresses_files/dxl_presentload.png" alt="" style="border: none;" height="102" width="700" border="0"></p>
+	<p style="margin-left: 0px;">&nbsp;</p>
+	<table class="InfoTable" style="left: 0px; top: 1919px;" width="700" cellspacing="0px">
+		<colgroup><col style="width: 100%;">
+		</colgroup><tbody><tr>
+			<td><p>Notes: Current load is inferred from the internal torque 
+			 value, not from Torque sensor etc.</p>
+			<p>For that reason, it cannot be used to measure weight or 
+			 torque; however, it must be used only to detect which direction 
+			 the force works. </p></td>
+		</tr>
+	</tbody></table>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p style="font-weight: bold;">Present Voltage <a name="Actuator_Address_2A" id="Actuator_Address_2A"></a></p>
+<div>
+	<p style="margin-left: 0px;">It is the size of the current voltage 
+	 supplied. </p>
+	<p style="margin-left: 0px;">This value is 10 times larger than the 
+	 actual voltage. For example, when 10V is supplied, the data value 
+	 is 100 (0x64)</p>
+</div>
+<p>&nbsp;</p>
+<p style="font-weight: bold; margin-left: 0px;">Present Temperature <a name="Actuator_Address_2B" id="Actuator_Address_2B"></a></p>
+<div>
+	<p>It is the internal temperature of Dynamixel in Celsius. </p>
+	<p>Data value is identical to the actual temperature in Celsius. For 
+	 example, if the data value is 85 (0x55), the current internal temperature 
+	 is 85℃.</p>
+</div>
+<p>&nbsp;</p>
+<p style="font-weight: bold;">Registered Instruction <a name="Actuator_Address_2C" id="Actuator_Address_2C"></a></p>
+<div>
+	<table style="border-collapse: separate; border-collapse: separate;" width="350" border="1" cellspacing="0">
+		<colgroup><col style="width: 14.639%;">
+		<col style="width: 85.361%;">
+		</colgroup><tbody><tr>
+			<td bgcolor="#FFFFA8"><p style="text-align: center; font-weight: bold;">Value</p></td>
+			<td bgcolor="#FFFFA8"><p style="text-align: center; font-weight: bold;">Meaning</p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">0</p></td>
+			<td><p>&nbsp;There are no commands transmitted by REG_WRITE</p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">1</p></td>
+			<td>&nbsp;There are commands transmitted by REG_WRITE.</td>
+		</tr>
+	</tbody></table>
+	<p>&nbsp;</p>
+	<table class="InfoTable" style="left: 0px; top: 70px;" width="543" cellspacing="0px">
+		<colgroup><col style="width: 100%;">
+		</colgroup><tbody><tr>
+			<td>Notes: If ACTION command is executed, the value is changed 
+			 into 0.</td>
+		</tr>
+	</tbody></table>
+</div>
+<p style="margin-left: 40px;">&nbsp;</p>
+<p style="font-weight: bold;">Moving <a name="Actuator_Address_2E" id="Actuator_Address_2E"></a></p>
+<div>
+	<table style="border-collapse: separate; border-collapse: separate;" width="340" border="1" cellspacing="0">
+		<colgroup><col style="width: 15.07%;">
+		<col style="width: 84.93%;">
+		</colgroup><tbody><tr>
+			<td bgcolor="#FFFFA8"><p style="text-align: center; font-weight: bold;">Value</p></td>
+			<td bgcolor="#FFFFA8"><p style="text-align: center; font-weight: bold;">Meaning</p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">0</p></td>
+			<td><p>&nbsp;Goal position command execution is completed.</p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">1</p></td>
+			<td>&nbsp;Goal position command execution is in progress.</td>
+		</tr>
+	</tbody></table>
+</div>
+<p>&nbsp;</p>
+<p style="font-weight: bold;">Lock <a name="Actuator_Address_2F" id="Actuator_Address_2F"></a></p>
+<div>
+	<table style="border-collapse: separate; border-collapse: separate;" width="324" border="1" cellspacing="0">
+		<colgroup><col style="width: 15.912%;">
+		<col style="width: 84.088%;">
+		</colgroup><tbody><tr>
+			<td bgcolor="#FFFFA8"><p style="text-align: center; font-weight: bold;">Value</p></td>
+			<td bgcolor="#FFFFA8"><p style="text-align: center; font-weight: bold;">Meaning</p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">0</p></td>
+			<td><p>&nbsp;EEPROM area can be modified.</p></td>
+		</tr>
+		<tr>
+			<td><p style="text-align: center;">1</p></td>
+			<td>&nbsp;EEPROM area cannot be modified.</td>
+		</tr>
+	</tbody></table>
+	<p>&nbsp;</p>
+	<table class="InfoTable" style="left: 0px; top: 70px;" width="543" cellspacing="0px">
+		<colgroup><col style="width: 100%;">
+		</colgroup><tbody><tr>
+			<td>Caution: If Lock is set to 1, the power must be turned 
+			 off and then turned on again to change into 0.</td>
+		</tr>
+	</tbody></table>
+</div>
+<p>&nbsp;</p>
+<p style="font-weight: bold; font-size: 10pt;"><span><font style="font-size:10pt;" size="2"><font><span><span><span style="font-weight: bold;"><font style="font-size: 10pt;" size="2"><span><font style="font-size: 9pt;" size="2">Punch</font></span><a name="Actuator_Address_30" id="Actuator_Address_30"></a></font></span></span></span></font></font></span></p>
+<p>Current to drive motor is at minimum.</p>
+<p>Can choose vales from 0x20 to 0x3FF.<br>
+</p>
+<p>&nbsp;</p>
+<h2>Option Frame</h2>
+<h3>Basic-Offered Frames</h3>
+<p style="margin-left: 40px;">Basic-offered frames with AX-12A are as follows.</p>
+<p style="margin-left: 40px;">&nbsp;</p>
+<p style="margin-left: 40px;"><img src="dynamixel_addresses_files/ax_series_frame_1.png" alt="" style="border: none;" border="0"></p>
+<p style="margin-left: 40px;">&nbsp;</p>
+<h3>Applying F2</h3>
+<p style="margin-left: 40px;">F2 is applied as below.</p>
+<p style="margin-left: 40px;">&nbsp;</p>
+<p style="margin-left: 40px;"><img src="dynamixel_addresses_files/ax_series_frame_2_.png" alt="" style="border: none;" height="291" width="420" border="0"></p>
+<p style="margin-left: 40px;">&nbsp;</p>
+<p style="margin-left: 40px;">&nbsp;</p>
+<p style="margin-left: 40px;">&nbsp;</p>
+<h3>Applying F3</h3>
+<p style="margin-left: 40px;">F3 is applied as below. &nbsp;F3 can be connected 
+ to 3 sides of AX-12A: Left, Right, and the bottom.</p>
+<p style="margin-left: 40px;">&nbsp;</p>
+<p style="margin-left: 40px;">&nbsp;</p>
+<p style="margin-left: 40px;"><img src="dynamixel_addresses_files/ax_series_frame_3_.png" alt="" style="border: none;" height="250" width="539" border="0"></p>
+<p style="margin-left: 40px; font-size: 12pt;">&nbsp;</p>
+<p style="margin-left: 40px; font-size: 12pt;"><img src="dynamixel_addresses_files/ax_series_frame_4_.png" alt="" style="border: none;" height="209" width="539" border="0"></p>
+<p style="margin-left: 40px; font-size: 12pt;">&nbsp;</p>
+<p style="margin-left: 40px;">&nbsp;</p>
+<p>&nbsp;</p>
+<h2>Dimension</h2>
+<p style="margin-left: 40px;">&nbsp;</p>
+<p><img src="dynamixel_addresses_files/ax-12a_dimension_.png" alt="" style="border: none;" height="369" width="552" border="0"></p>
+<p>&nbsp;</p>
+<h2>Videos</h2>
+<p style="font-size: 12pt;">HOW TO REPLACE GEARS</p>
+<object height="360" width="640">
+<param name="movie" value="http://www.youtube-nocookie.com/v/1GKeM5562Ag?hl=ko_KR&amp;version=3">
+<param name="allowFullScreen" value="true">
+<param name="allowscriptaccess" value="always">
+<embed type="application/x-shockwave-flash" src="dynamixel_addresses_files/1GKeM5562Ag.swf" allowfullscreen="true" allowscriptaccess="always" height="360" width="640"></object> 
+ <!--?rh-region_start id="footer" style="width: 100%; position: relative;" ?-->
+	<br>
+
+<hr align="center">
+<p style="text-align: right; font-size: 8pt; color: #808080;"><a href="mailto:contactus2@robotis.com">Error 
+ Report</a></p>
+<p style="text-align: right; font-size: 8pt; color: #808080;">Copyrights 
+ (c) 2010 &nbsp;<a href="http://www.robotis.com/" target="_top">ROBOTIS</a> 
+ &nbsp;All rights reserved.</p>
+<!--?rh-region_end ?-->
+<script type="text/javascript" language="javascript1.2">//<![CDATA[
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+
+
+highlightSearch();
+//-->
+//]]></script>
+
+
+</body></html>
