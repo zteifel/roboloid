@@ -3,7 +3,7 @@ classdef Robot < handle
   properties
     actuators;
     nActuators = 18;
-    pauseTime = 0.001;
+    baseSpeed = 0.7;
 
     workPool;
     con;
@@ -18,37 +18,55 @@ classdef Robot < handle
         return
       end
       %obj.workPool = WorkPool();
-
       obj.con = Connection();
       obj.actuators = obj.initActuator();
     end
 
-    function status = test(obj)
-      status = 1;
-      obj.moveThread(1)
+    function playTest(obj)
+      obj.playSequence('test.mat',1,1);
     end
 
-    function loopSequenceThread(obj,filename,que)
-      %h = @() obj.loopSquence(filename);
-      obj.workPool.scheduleJob(@h,que);
+    function defaultPosition(obj, speed)
+      obj.playSequence('default.mat',speed,1);
     end
 
-    function loopSequence(obj,filename)
-      while true
-        obj.playSequence(filename,1);
-      end
+    function throwLeft(obj)
+      obj.playSequence('throwLeft.mat',1,1);
     end
 
-    function playSequenceThread(obj,filename,nRepeats,que)
-      %h = @() obj.playSequence(filename,nRepeats);
-      obj.workPool.scheduleJob(@h,que);
+    function throwRight(obj)
+      obj.playSequence('throwRight.mat',1,1);
     end
 
-    function playSequence(obj,filename,speed,nRepeats,actuators)
-      s = 0.7;
-      relSpeed = @(x) -4*(1-s)*x^2+4*(1-s)*x+s;
+    function interuptStrafeRight(obj,steps)
+      obj.interuptMovement(@() obj.strafeRight(steps));
+    end
+
+    function queStrafeRight(obj,steps)
+      obj.queMovement(@() obj.strafeRight(steps));
+    end
+
+    function interuptStrafeLeft(obj,steps)
+      obj.interuptMovement(@() obj.strafeLeft(steps));
+    end
+
+    function queStrafeLeft(obj,steps)
+      obj.queMovement(@() obj.strafeLeft(steps));
+    end
+
+    function strafeLeft(obj,steps)
+      obj.playSequence('strafeLeft.mat',0.2,steps);
+    end
+
+    function strafeRight(obj,steps)
+      obj.playSequence('strafeRight.mat',0.2,steps);
+    end
+
+
+    function playSequence(obj,filename,speed,nRepeats)
       tmp = load(['data/' filename],'seq');
       seq = tmp.seq;
+      nRepeats = (nRepeats < 1)*1E5 + (nRepeats > 0)*nRepeats;
 
       for rep=1:nRepeats
         for i=1:size(seq,1)
@@ -61,13 +79,11 @@ classdef Robot < handle
           first = true;
           j = 1;
           while first || obj.actuators(iMaxMove).isMoving()
-
             currPos = obj.actuators(j).getPosValue();
             relPos = abs(currPos-startPositions(j))/movementLengths(j);
 
             if not(isnan(relPos)) && not(relPos == Inf)
-
-              velocity = relSpeed(relPos)*maxVelocities(j);
+              velocity = obj.relSpeed(relPos)*maxVelocities(j);
               velocity = not(velocity > 1)*(velocity-1)+1;
               velocity = not(velocity < 0)*velocity;
 
@@ -89,15 +105,11 @@ classdef Robot < handle
 
     end
 
-    function playTest(obj)
-      obj.playSequence('test.mat',0.2,10,1:18);
-    end
-
     function recordSequence(obj)
       obj.disableTorque();
       i = 0;
       while true
-        in = input('[Enter] to record pose, [s]ave sequence or [q]uit ','s');
+        in = input('[r]ecord pose, [s]ave sequence or [q]uit ','s');
         if in == 'r'
           i = i + 1;
           for j = 1: obj.nActuators
@@ -116,6 +128,10 @@ classdef Robot < handle
         end
       end
       obj.enableTorque();
+    end
+
+    function speed = relSpeed(obj,x)
+      speed = -4*(1-obj.baseSpeed)*x^2+4*(1-obj.baseSpeed)*x+obj.baseSpeed;
     end
 
     function enableTorque(obj)
@@ -138,7 +154,7 @@ classdef Robot < handle
 
     function positions = getJointsPositions(obj)
       positions = zeros(1,obj.nActuators);
-      for i=1: obj.nActuators
+      for i=1:obj.nActuators
         positions(i) = obj.actuators(i).getPosValue();
       end
     end
@@ -153,12 +169,20 @@ classdef Robot < handle
       end
     end
 
+    function queMovement(obj,func)
+      obj.workPool.scheduleJob(func,true);
+    end
+
+    function interuptMovement(obj,func)
+      obj.workPool.scheduleJob(func,false);
+    end
+
     function actuators = initActuator(obj)
       tmp = load('data/actuatorData.mat');
       actData = tmp.actData;
       for i=1:size(actData,1)
         actuators(i) = Actuator(obj.con,i,actData(i,1),actData(i,2));
-        actuators(i).enableTorque();
+        %actuators(i).enableTorque();
       end
     end
 
