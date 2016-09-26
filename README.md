@@ -37,7 +37,7 @@ Make robot walk two steps to the left and then throw to left
 
 Initiate a robot instance and start recording and follow instructions
 
-`r = Robot; r.recordSequence;
+`r = Robot; r.recordSequence;`
 
 The recordered sequence can be played back with
 
