@@ -20,6 +20,7 @@ classdef Robot < handle
       %obj.workPool = WorkPool();
       obj.con = Connection();
       obj.actuators = obj.initActuator();
+      obj.defaultPosition(0.2);
     end
 
     function playTest(obj)
