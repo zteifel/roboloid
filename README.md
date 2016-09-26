@@ -31,7 +31,7 @@ Initiated an instance of Robot class
 
 Make robot walk two steps to the left and then throw to left
 
-`r.strafeLeft(2);r.throwLeft();
+`r.strafeLeft(2);r.throwLeft();`
 
 ## To record a sequence
 
