@@ -41,7 +41,7 @@ Initiate a robot instance and start recording and follow instructions
 
 The recordered sequence can be played back with
 
-'r.playSequence(filename,speed,steps)`
+`r.playSequence(filename,speed,steps)`
 
 ## Windows
 
