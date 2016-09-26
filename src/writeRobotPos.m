@@ -84,6 +84,7 @@ ESC_CHARACTER               = 'e';          % Key for escaping loop
 
 COMM_SUCCESS                = 0;            % Communication Success result value
 COMM_TX_FAIL                = -1001;        % Communication Tx Failed
+READ_TIMEOUT                = 1000;
 
 % Initialize PortHandler Structs
 % Set the port path
@@ -122,10 +123,10 @@ else
     return;
 end
 
-startingPose = [188 831 243 765 513 0 347 651 500 524 516 507 523 501 511 513 498 522];
+startingPose = [1023-831 831 243 765 513 0 347 651 500 524 516 507 523 501 511 513 498 522];
 % Enable Dynamixel Torque
 
-for i=2:length(startingPose)
+for i=1:length(startingPose)
     DXL_ID = i;
     write1ByteTxRx(port_num, PROTOCOL_VERSION, DXL_ID, ADDR_MX_TORQUE_ENABLE, TORQUE_ENABLE);
     if getLastTxRxResult(port_num, PROTOCOL_VERSION) ~= COMM_SUCCESS
@@ -140,7 +141,7 @@ end
 
 
 % Write goal position
-for i=2:length(startingPose)
+for i=1:length(startingPose)
     DXL_ID = i;
     write2ByteTxRx(port_num, PROTOCOL_VERSION, DXL_ID, ADDR_MX_GOAL_POSITION, startingPose(i));
     if getLastTxRxResult(port_num, PROTOCOL_VERSION) ~= COMM_SUCCESS
@@ -148,12 +149,28 @@ for i=2:length(startingPose)
     elseif getLastRxPacketError(port_num, PROTOCOL_VERSION) ~= 0
         printRxPacketError(PROTOCOL_VERSION, getLastRxPacketError(port_num, PROTOCOL_VERSION));
     end
-    pause(1)
+    t = 0;
+    while 1
+        % Read present position
+        t = t + 1;
+        dxl_present_position = read2ByteTxRx(port_num, PROTOCOL_VERSION, DXL_ID, ADDR_MX_PRESENT_POSITION);
+        if getLastTxRxResult(port_num, PROTOCOL_VERSION) ~= COMM_SUCCESS
+            printTxRxResult(PROTOCOL_VERSION, getLastTxRxResult(port_num, PROTOCOL_VERSION));
+        elseif getLastRxPacketError(port_num, PROTOCOL_VERSION) ~= 0
+            printRxPacketError(PROTOCOL_VERSION, getLastRxPacketError(port_num, PROTOCOL_VERSION));
+        end
+        if ~(abs(startingPose(i) - dxl_present_position) > DXL_MOVING_STATUS_THRESHOLD)
+            fprintf('[ID:%03d] Reached PresPos:%03d\n', DXL_ID, dxl_present_position);
+            break;
+        elseif (t < READ_TIMEOUT)
+            fprintf('[ID:%03d] Timed out...', DXL_ID);
+        end
+    end
 end
 
 
 % Disable Dynamixel Torque
-for i=2:length(startingPose)
+for i=1:length(startingPose)
     DXL_ID = i;
     write1ByteTxRx(port_num, PROTOCOL_VERSION, DXL_ID, ADDR_MX_TORQUE_ENABLE, TORQUE_DISABLE);
     if getLastTxRxResult(port_num, PROTOCOL_VERSION) ~= COMM_SUCCESS
