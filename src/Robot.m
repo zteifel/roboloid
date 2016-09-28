@@ -24,11 +24,19 @@ classdef Robot < handle
     end
 
     function playTest(obj)
-      obj.playSequence('test.mat',1,1);
+      obj.playSequence('test.mat',0.8,1);
     end
 
     function defaultPosition(obj, speed)
       obj.playSequence('default.mat',speed,1);
+    end
+
+    function slideLeft(obj)
+      obj.playSequence('slideLeft.mat',0.3,1);
+    end
+
+    function slideRight(obj)
+      obj.playSequence('slideRight.mat',0.3,1);
     end
 
     function throwLeft(obj)
@@ -39,28 +47,12 @@ classdef Robot < handle
       obj.playSequence('throwRight.mat',1,1);
     end
 
-    function interuptStrafeRight(obj,steps)
-      obj.interuptMovement(@() obj.strafeRight(steps));
-    end
-
-    function queStrafeRight(obj,steps)
-      obj.queMovement(@() obj.strafeRight(steps));
-    end
-
-    function interuptStrafeLeft(obj,steps)
-      obj.interuptMovement(@() obj.strafeLeft(steps));
-    end
-
-    function queStrafeLeft(obj,steps)
-      obj.queMovement(@() obj.strafeLeft(steps));
-    end
-
     function strafeLeft(obj,steps)
-      obj.playSequence('strafeLeft.mat',0.2,steps);
+      obj.playSequence('strafeLeft.mat',0.2k,steps);
     end
 
     function strafeRight(obj,steps)
-      obj.playSequence('strafeRight.mat',0.2,steps);
+      obj.playSequence('strafeRight.mat',0.22,steps);
     end
 
 
