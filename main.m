@@ -3,6 +3,9 @@
 % its origin at the center of the goal. One can further
 % assume that the robot is oriented with its front towards the ball.
 
+addpath('src')
+addpath('src/vision')
+
 % Constants (TODO: measure these values)
 ROBOT_STRAFE_DISTANCE       = 0.1;
 ROBOT_THROW_DISTANCE        = 0.2;
@@ -19,7 +22,7 @@ ballVelocity = [0 0];
 ballVeclocityNew = [0.001 -0.1];
 
 % Robot
-robot = Robot;
+robot = Robot();
 currentState = 0;
 
 % States
