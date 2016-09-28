@@ -1,0 +1,46 @@
+close all;
+clear cam;
+clear camobj;
+
+ch = 0.68;
+cam = webcam(1);
+ballColor = [205, 100, 0];
+robotColor = [200,255,50];
+
+figure()
+hold on;
+handle = imagesc(snapshot(cam));
+
+dim = [0.2 0.5 0.3 0.3];
+dim2 = [0.2 0.4 0.3 0.3];
+ann = annotation('textbox',dim,'String','  ','FitBoxToText','on');
+ann2 = annotation('textbox',dim2,'String','1','FitBoxToText','on');
+robHandle = plot(1,1,'r*');
+ballHandle = plot(1,1,'g*');
+lastPoint = [0,0];
+dt = 1;
+filterLen = 8;
+ballSpeedFilter = zeros
+while true
+    tic
+    pic = snapshot(cam);
+    [dist, angle, status, ball, robot] = findDistanceAngle(cam, ch, ballColor, robotColor);
+    
+    goalLine = robot(2);    
+    ballSpeed = (ball - lastPoint) / dt;
+    
+    
+    
+    set(handle, 'CData', pic);
+    set(ann, 'String', dist);
+    set(ann2, 'String', status);
+    set(robHandle, 'XData', robot(1));
+    set(robHandle, 'YData', robot(2));
+    set(ballHandle, 'XData', ball(1));
+    set(ballHandle, 'YData', ball(2));
+    drawnow();
+    
+    dt = toc;
+    
+end
+    
