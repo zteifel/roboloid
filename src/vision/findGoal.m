@@ -1,4 +1,4 @@
-function [goalLx goalLy goalRx goalRy] = findGoal(im, camH, camAng)
+function [goalLx, goalLy, goalRx, goalRy] = findGoal(im, camH, camAng)
 color = [50, 80, 100];
 mask = maskImage(im, color);
 GP1 = findColorMarker(im, color, 64);
@@ -21,3 +21,5 @@ else
     goalRy = GP1(2);
 end
 
+[goalLx, goalLy] = xyToPos( [goalLx, goalLy], camAng, camH, [xMax, yMax]);
+[goalRx, goalRy] = xyToPos([goalRx, goalRy], camAng, camH, [xMax, yMax]);
