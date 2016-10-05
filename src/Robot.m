@@ -48,7 +48,7 @@ classdef Robot < handle
     end
 
     function strafeLeft(obj,steps)
-      obj.playSequence('strafeLeft.mat',0.2k,steps);
+      obj.playSequence('strafeLeft.mat',0.2,steps);
     end
 
     function strafeRight(obj,steps)
