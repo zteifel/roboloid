@@ -9,8 +9,8 @@ addpath('src/vision')
 % Constants (TODO: measure these values)
 ROBOT_MOVEMENT_DEFS = ['ROBOT_STRAFE', 'ROBOT_STRAFE2', 'ROBOT_SLIDE',...
   'ROBOT_STRAFE_SLIDE', 'ROBOT_STRAFE2_SLIDE', 'ROBOT_THROW', 'ROBOT_SLIDE_THROW'];
-ROBOT_MOVEMENT_DISTANCES = [0.1, 0.2, 0.2, 0.3, 0.4, 0.5, 0.7];
-ROBOT_MOVEMENT_TIMES = [1, 2, 0.2, 1.2, 2.2, 0.3, 0.5];
+ROBOT_MOVEMENT_DISTANCES = [0.05, 0.11, 0.2, 0.16, 0.31, 0.5, 0.7];
+ROBOT_MOVEMENT_TIMES = [2.4, 5.0, 0.8, 3.2, 5.8, 1.2, 2.6];
 
 % ROBOT_MOVEMENT_TIMES.('ROBOT_STRAFE')               = 1;
 % ROBOT_MOVEMENT_TIMES.('ROBOT_STRAFE2')              = 2;
@@ -20,7 +20,7 @@ ROBOT_MOVEMENT_TIMES = [1, 2, 0.2, 1.2, 2.2, 0.3, 0.5];
 % ROBOT_MOVEMENT_TIMES.('ROBOT_THROW')                = 0.3;
 % ROBOT_MOVEMENT_TIMES.('ROBOT_SLIDE_THROW')          = 0.5;
 
-ROBOT_FOOT_WIDTH                                    = 0.06;
+ROBOT_FOOT_WIDTH                                    = 0.08;
 GOAL_SIZE                                           = 1;
 
 % Visuals
@@ -32,7 +32,7 @@ goalCenterPosition = [1.2 0.1];
 ballVeclocityNew = [0.001 -0.1];
 
 % Robot
-robot = Robot();
+robot = Robot;
 currentState = 0;
 
 % States
