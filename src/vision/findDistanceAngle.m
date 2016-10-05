@@ -10,8 +10,8 @@ robot = [0,0];
 
 im = snapshot(cam);
 
-mask = maskImage(im, [205, 100, 0]);
-robotMask = maskImage(im, [200,255,50]);
+mask = maskImage(im, ballCol);
+robotMask = maskImage(im, robCol);
 
 CC_ball = bwconncomp(mask);
 CC_robot = bwconncomp(robotMask);

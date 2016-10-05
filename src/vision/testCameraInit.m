@@ -1,7 +1,9 @@
 clear camobj
 clear cam
 close all
-camobj = webcam(1);
+camobj = webcam(2);
+%camobj.ExposureMode = 'manual';
+%camobj.Exposure = -4;
 
 figure()
 hold on;
@@ -25,8 +27,9 @@ while(i < 10000)
     i = i+1;
     pic = snapshot(camobj);
     
-    mask = maskImage(pic, [205, 100, 0]);
-    robotMask = maskImage(pic, [200,255,50]);
+    %mask = maskImage(pic, [200, 100, 20]);
+    mask = maskImage(pic, [50, 80, 100]);
+    robotMask = maskImage(pic, [200,255,100]);
     
     CC_ball = bwconncomp(mask);
     CC_robot = bwconncomp(robotMask);

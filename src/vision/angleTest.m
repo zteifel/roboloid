@@ -2,11 +2,13 @@ close all;
 clear cam;
 clear camobj;
 
-ch = 0.68;
-cam = webcam(1);
+ch = 1.30;
+cam = webcam(2);
 cam.resolution = '640x480';
-ballColor = [205, 100, 0];
-robotColor = [200,255,50];
+
+cam.ExposureMode = 'manual';
+cam.Exposure = -3;
+
 
 figure()
 hold on;
@@ -28,7 +30,7 @@ filterInd = 1;
 while true
     tic
     pic = snapshot(cam);
-    [dist, angle, status, ball, robot] = findDistanceAngle(cam, ch, ballColor, robotColor);
+    [ball, robot, ballRaw, robotRaw] = findAtAngle(pic, 45, ch);
     
     goalLine = robot(2);
     ballSpeed = (ball - lastPoint) / dt;
@@ -36,21 +38,21 @@ while true
     filterInd = filterInd + 1;
     ballSpeedFilter(mod(filterInd, filterLen)+1,:) = ballSpeed;
     avgBallSpeed = mean(ballSpeedFilter,1);
-    
+    dist = norm(robot - ball);
     
     set(handle, 'CData', pic);
     set(ann, 'String', dist);
-    set(ann2, 'String', status);
-    set(robHandle, 'XData', robot(1));
-    set(robHandle, 'YData', robot(2));
-    set(ballHandle, 'XData', ball(1));
-    set(ballHandle, 'YData', ball(2));
+    
+    set(robHandle, 'XData', robotRaw(1));
+    set(robHandle, 'YData', robotRaw(2));
+    set(ballHandle, 'XData', ballRaw(1));
+    set(ballHandle, 'YData', ballRaw(2));
     if size(avgBallSpeed,2) ~=0
-        set(ballArrow, 'XData', [ball(1), ball(1)+avgBallSpeed(1)]);
-        set(ballArrow, 'YData', [ball(2), ball(2)+avgBallSpeed(2)]);
+        set(ballArrow, 'XData', [ballRaw(1), ballRaw(1)+100*avgBallSpeed(1)]);
+        set(ballArrow, 'YData', [ballRaw(2), ballRaw(2)-100*avgBallSpeed(2)]);
     end
     drawnow();
     
-    dt = toc
+    dt = toc;
     
 end
