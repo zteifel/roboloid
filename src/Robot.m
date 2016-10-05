@@ -31,6 +31,10 @@ classdef Robot < handle
       obj.playSequence('default.mat',speed,1);
     end
 
+    function defaultPosition2(obj, speed)
+      obj.playSequence('default2.mat',speed,1);
+    end
+
     function slideLeft(obj)
       obj.playSequence('slideLeft.mat',0.3,1);
     end
@@ -48,7 +52,7 @@ classdef Robot < handle
     end
 
     function strafeLeft(obj,steps)
-      obj.playSequence('strafeLeft.mat',0.2,steps);
+      obj.playSequence('strafeLeft.mat',0.22,steps);
     end
 
     function strafeRight(obj,steps)
