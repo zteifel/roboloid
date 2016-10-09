@@ -6,7 +6,11 @@
 addpath('src')
 addpath('src/vision')
 
-% Constants (TODO: measure these values)
+close all
+clear cam
+clear camobj
+
+% Constants
 ROBOT_MOVEMENT_DEFS = ['ROBOT_STRAFE', 'ROBOT_STRAFE2', 'ROBOT_SLIDE',...
   'ROBOT_STRAFE_SLIDE', 'ROBOT_STRAFE2_SLIDE', 'ROBOT_THROW', 'ROBOT_SLIDE_THROW'];
 ROBOT_MOVEMENT_DISTANCES = [0.05, 0.11, 0.2, 0.16, 0.31, 0.5, 0.7];
@@ -24,12 +28,14 @@ ROBOT_FOOT_WIDTH                                    = 0.08;
 GOAL_SIZE                                           = 1;
 
 % Visuals
-ballInitialPos = [0 1.50];
-robotInitialPos = [0 0];
-ballVelocity = [0 0];
-goalCenterPosition = [1.2 0.1];
+ch = 1.30;
+cam = webcam(1);
+cam.resolution = '640x480';
+cam.ExposureMode = 'manual';
+cam.Exposure = -3;
 
-ballVeclocityNew = [0.001 -0.1];
+dt = inf;
+ballVelocity = [0 0];
 
 % Robot
 robot = Robot;
@@ -43,37 +49,43 @@ while running
     % Set robot in default position, get goal center position,
     % wait for user to place in arena
     
-    %goalCenterPosition = getGoalCenterPosition()
-    robot.defaultPosition(1);
-    input('Place robot at starting position, then press enter to continue\n')
+    input('Place robot and ball at starting positions, then press enter to continue\n')
+    pic = snapshot(cam);
+    [ball, robotPos, ballRaw, robotRaw] = findAtAngle(pic, 45, ch);
+    goalCenterPosition = robotPos;
     currentState = 1;
     
   elseif (currentState == 1)
     % Initial state; get ball initial position and robot initial position
 
-    %ballInitialPos = changeCoordinates(getBallInitialPos())
-    %robotInitialPos = changeCoordinates(getRobotInitialPos())
-    currentState = 2;  
+    ballInitialPos = changeCoordinates(ball, goalCenterPosition);
+    robotInitialPos = changeCoordinates(robotPos, goalCenterPosition);
+    currentState = 2;
     
   elseif (currentState == 2)
+    tic  
     % Determine ball velocity and final ball position
+    lastPoint = ball;
+    lastBallVelocity = ballVelocity;
     
-    %ballVelocity = getBallVelocity();
+    pic = snapshot(cam);
+    [ball, robot, ballRaw, robotRaw] = findAtAngle(pic, 45, ch);
+    
+    ballVelocity = (ball - lastPoint) / dt;
     if (abs(ballVelocity(1)) > 0 || abs(ballVelocity(2)) > 0)
-      %ballVelocityNew = getBallVelocity();
-      if (abs(ballVelocityNew(1)) <= abs(ballVelocity(1)) || ...
-          abs(ballVelocityNew(2)) <= abs(ballVelocity(2)))
+      if (abs(ballVelocity(1)) <= abs(lastBallVelocity(1)) || ...
+          abs(ballVelocity(2)) <= abs(lastBallVelocity(2)))
         [ballFinalPos, ballFinalTime] = getBallFinalPos(ballVelocity, ballInitialPos);
         currentState = 3;
       end
     end
     %ballVelocity = getBallVelocity();
-    
+    dt = toc;
   elseif (currentState == 3)
     % Determine movement needed
     
     if (abs(ballFinalPos(1)) > GOAL_SIZE/2)
-      print('Ball will miss, no action needed')
+      disp('Ball will miss, no action needed')
       currentState = 0;
     else
       action = '';
@@ -90,7 +102,7 @@ while running
         action = ROBOT_MOVEMENT_DEFS(ind);
         currentState = 4;
       else
-        print('Ball will hit robot, no action needed')
+        disp('Ball will hit robot, no action needed')
         currentState = 0;
       end
     end

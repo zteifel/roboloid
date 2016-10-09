@@ -13,7 +13,7 @@ yPos = camH*(tand(camAng+gammaY));
 r = sqrt(camH^2 + yPos^2);
 xPos = r * tand(gammaX);
 
-[gammaX, gammaY, xPos, yPos, inCoord]
+[gammaX, gammaY, xPos, yPos, inCoord];
 
 pos = [xPos yPos];
 
