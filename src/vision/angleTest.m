@@ -3,7 +3,7 @@ clear cam;
 clear camobj;
 
 ch = 1.30;
-cam = webcam(2);
+cam = webcam(1);
 cam.resolution = '640x480';
 
 cam.ExposureMode = 'manual';
