@@ -45,8 +45,13 @@ The recordered sequence can be played back with
 
 ## Windows
 
--Nothing yet
+Compile C SDK
 
+Download and install any 32/64-bit version of Visual Studio
+(Chalmers provides student licences)
 
+Follow the instructions in the following tutorial video but instead
+of c++, choose the build directory for c (roboloid/lib/DynamixelSDK/c/build/win64):
+https://www.youtube.com/watch?v=VKHyIYsSukM&list=PLEf1s0tzVSnSgVzf4AREpat_P_HRLSiDn&index=4
 
 
