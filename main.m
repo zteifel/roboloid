@@ -89,7 +89,13 @@ while running
       currentState = 0;
     else
       action = '';
+      % QUESTION: WHICH ORIENTATION IS THE COORDINATE SYSTEM?
       requiredDistance = ballFinalPos(1) - robotInitialPos(1);
+      if requiredDistance < 0
+        direction = 'left';
+      else
+        direction = 'right';
+      end
       if (abs(requiredDistance) > ROBOT_FOOT_WIDTH)
         inds = find(ROBOT_MOVEMENT_DISTANCES > abs(requiredDistance));
         ind = inds(1);
@@ -110,6 +116,51 @@ while running
   elseif (currentState == 4)
     % Perform determined action
     
-
+    if strcmp(direction, 'left')
+      switch action
+        case 'ROBOT_STRAFE'
+          robot.strafeLeft(1);
+        case 'ROBOT_STRAFE2'
+          robot.strafeLeft(2);
+        case 'ROBOT_SLIDE'
+          robot.slideLeft();
+        case 'ROBOT_STRAFE_SLIDE'
+          robot.strafeLeft(1);
+          robot.slideLeft();
+        case 'ROBOT_STRAFE2_SLIDE'
+          robot.strafeLeft(2);
+          robot.slideLeft();
+        case 'ROBOT_THROW'
+          robot.throwLeft();
+        case 'ROBOT_SLIDE_THROW'
+          robot.slideLeft();
+          robot.throwLeft();
+        otherwise
+          robot.defaultPostion(0.5);
+      end
+    elseif strcmp(direction, 'right')
+      switch action
+        case 'ROBOT_STRAFE'
+          robot.strafeRight(1);
+        case 'ROBOT_STRAFE2'
+          robot.strafeRight(2);
+        case 'ROBOT_SLIDE'
+          robot.slideRight();
+        case 'ROBOT_STRAFE_SLIDE'
+          robot.strafeRight(1);
+          robot.slideRight();
+        case 'ROBOT_STRAFE2_SLIDE'
+          robot.strafeRight(2);
+          robot.slideRight();
+        case 'ROBOT_THROW'
+          robot.throwRight();
+        case 'ROBOT_SLIDE_THROW'
+          robot.slideRight();
+          robot.throwRight();
+        otherwise
+          robot.defaultPostion(0.5);
+      end
+    end
+    running = 0;
   end
 end
