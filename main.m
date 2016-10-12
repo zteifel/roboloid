@@ -13,7 +13,7 @@ clear camobj
 % Constants
 ROBOT_MOVEMENT_DEFS = ['ROBOT_STRAFE', 'ROBOT_STRAFE2', 'ROBOT_SLIDE',...
   'ROBOT_STRAFE_SLIDE', 'ROBOT_STRAFE2_SLIDE', 'ROBOT_THROW', 'ROBOT_SLIDE_THROW'];
-ROBOT_MOVEMENT_DISTANCES = [0.05, 0.11, 0.2, 0.16, 0.31, 0.5, 0.7];
+ROBOT_MOVEMENT_DISTANCES = [0.05, 0.11, 0.18, 0.23, 0.31, 0.5, 0.7];
 ROBOT_MOVEMENT_TIMES = [2.4, 5.0, 0.8, 3.2, 5.8, 1.2, 2.6];
 
 % ROBOT_MOVEMENT_TIMES.('ROBOT_STRAFE')               = 1;
@@ -75,7 +75,7 @@ while running
     if (abs(ballVelocity(1)) > 0 || abs(ballVelocity(2)) > 0)
       if (abs(ballVelocity(1)) <= abs(lastBallVelocity(1)) || ...
           abs(ballVelocity(2)) <= abs(lastBallVelocity(2)))
-        [ballFinalPos, ballFinalTime] = getBallFinalPos(ballVelocity, ballInitialPos);
+        [ballFinalPos, ballFinalTime] = getBallFinalPos(ballVelocity, ball);
         currentState = 3;
       end
     end
@@ -92,9 +92,9 @@ while running
       % QUESTION: WHICH ORIENTATION IS THE COORDINATE SYSTEM?
       requiredDistance = ballFinalPos(1) - robotInitialPos(1);
       if requiredDistance < 0
-        direction = 'left';
-      else
         direction = 'right';
+      else
+        direction = 'left';
       end
       if (abs(requiredDistance) > ROBOT_FOOT_WIDTH)
         inds = find(ROBOT_MOVEMENT_DISTANCES > abs(requiredDistance));
@@ -106,6 +106,7 @@ while running
           end
         end
         action = ROBOT_MOVEMENT_DEFS(ind);
+        disp(action)
         currentState = 4;
       else
         disp('Ball will hit robot, no action needed')
