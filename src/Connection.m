@@ -3,7 +3,7 @@ classdef Connection < handle
     lib_name
 
     BAUDRATE          = 1000000;
-    DEVICENAME        = 'COM5';
+    DEVICENAME        = 'COM4';
     PROTOCOL_VERSION  = 1.0;
     COMM_SUCCESS      = 0;
 
@@ -51,10 +51,10 @@ classdef Connection < handle
 
     function  loadLib(obj)
       if strcmp(computer, 'PCWIN')
-        obj.dev_name = 'COM1';
+        obj.dev_name = 'COM4';
         obj.lib_name = 'dxl_x86_c';
       elseif strcmp(computer, 'PCWIN64')
-        obj.dev_name = 'COM5';
+        obj.dev_name = 'COM4';
         obj.lib_name = 'dxl_x64_c';
       elseif strcmp(computer, 'GLNX86')
         obj.dev_name = '/dev/ttyUSB0';

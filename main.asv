@@ -12,12 +12,11 @@ clear camobj
 
 figure(1);
 hand = scatter([0,0,0], [0,0,0]);
-axis([-2 2 0 4]);
 
 % Constants
 ROBOT_MOVEMENT_DEFS = ['ROBOT_STRAFE', 'ROBOT_STRAFE2', 'ROBOT_SLIDE',...
   'ROBOT_STRAFE_SLIDE', 'ROBOT_STRAFE2_SLIDE', 'ROBOT_THROW', 'ROBOT_SLIDE_THROW'];
-ROBOT_MOVEMENT_DISTANCES = [0.05, 0.11, 0.18, 0.23, 0.31, 0.5, 0.7];
+ROBOT_MOVEMENT_DISTANCES = [0.05, 0.11, 0.2, 0.16, 0.31, 0.5, 0.7];
 ROBOT_MOVEMENT_TIMES = [2.4, 5.0, 0.8, 3.2, 5.8, 1.2, 2.6];
 
 % ROBOT_MOVEMENT_TIMES.('ROBOT_STRAFE')               = 1;
@@ -47,7 +46,7 @@ currentState = 0;
 
 % Lowpass for ball pos
 
-filterLen = 16;
+filterLen = 8;
 ballSpeedFilter = zeros(filterLen,2);
 filterInd = 1;
 
@@ -76,25 +75,25 @@ while running
   elseif (currentState == 2)
     tic  
     % Determine ball velocity and final ball position
-    lastBallVelocity = ballVelocity;
     lastPoint = ball;
+    lastBallVelocity = ballVelocity;
     
     pic = snapshot(cam);
     [ball, robotPos, ballRaw, robotRaw] = findAtAngle(pic, 45, ch);
     
+    ballVelocity = (ball - lastPoint) / dt;
+    lastPoint = ball;
     filterInd = filterInd + 1;
     ballSpeedFilter(mod(filterInd, filterLen)+1,:) = ballVelocity;
     ballVelocity = mean(ballSpeedFilter,1);
     
-    set(hand, 'XData', [ball(1) robotPos(1) ball(1)+ballVelocity(1)]);
-    set(hand, 'YData', [ball(2) robotPos(2) ball(2)+ballVelocity(2)]);
-    set(hand, 'CData', [[255 0 0]; [0 255 0]; [0 0 255]]);
+    set(hand, 'XData', [ball(1) robotPos(1)])
     
-    if filterInd > filterLen
+    if filterInd > 8
         if (abs(ballVelocity(1)) > 0.4 || abs(ballVelocity(2)) > 0.4)
             if (abs(ballVelocity(1)) <= abs(lastBallVelocity(1)) || ...
                     abs(ballVelocity(2)) <= abs(lastBallVelocity(2)))
-                [ballFinalPos, ballFinalTime] = getBallFinalPos(ballVelocity, ballInitialPos);
+                [ballFinalPos, ballFinalTime] = getBallFinalPos(ballVelocity, ballInitialPos)
                 currentState = 3;
             end
         end
@@ -112,9 +111,9 @@ while running
       % QUESTION: WHICH ORIENTATION IS THE COORDINATE SYSTEM?
       requiredDistance = ballFinalPos(1) - robotInitialPos(1);
       if requiredDistance < 0
-        direction = 'right';
-      else
         direction = 'left';
+      else
+        direction = 'right';
       end
       if (abs(requiredDistance) > ROBOT_FOOT_WIDTH)
         inds = find(ROBOT_MOVEMENT_DISTANCES > abs(requiredDistance));
@@ -126,7 +125,6 @@ while running
           end
         end
         action = ROBOT_MOVEMENT_DEFS(ind);
-        disp(action)
         currentState = 4;
       else
         disp('Ball will hit robot, no action needed')

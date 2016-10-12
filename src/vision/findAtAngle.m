@@ -3,8 +3,8 @@ function [ball, robot, ballRaw, robotRaw] = findAtAngle(im, camAng, camH)
 ballSize = 2000;
 robotSize = 1000;
 
-ballCol = [200, 100, 20];
-robCol = [200,255,100];
+ballCol = [250, 50, 50];
+robCol = [200,255,150];
 
 xMax = 640;
 yMax = 480;

@@ -6,8 +6,8 @@ ch = 1.30;
 cam = webcam(1);
 cam.resolution = '640x480';
 
-cam.ExposureMode = 'manual';
-cam.Exposure = -3;
+%cam.ExposureMode = 'manual';
+%cam.Exposure = -4;
 
 
 figure()

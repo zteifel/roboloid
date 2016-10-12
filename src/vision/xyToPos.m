@@ -6,14 +6,14 @@ FOVy = 55.92;
 %gammaY = pixelToAngle(inCoord(2));
 
 gammaX = (inCoord(1)-camRes(1)/2) * FOVx / camRes(1);
-gammaY = (inCoord(2)-camRes(2)/2) * FOVy / camRes(2);
+gammaY = -(inCoord(2)-camRes(2)/2) * FOVy / camRes(2);
 
 yPos = camH*(tand(camAng+gammaY));
 
 r = sqrt(camH^2 + yPos^2);
 xPos = r * tand(gammaX);
 
-[gammaX, gammaY, xPos, yPos, inCoord];
+[gammaX, gammaY, xPos, yPos, inCoord]
 
 pos = [xPos yPos];
 
