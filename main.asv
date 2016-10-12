@@ -12,7 +12,6 @@ clear camobj
 
 figure(1);
 hand = scatter([0,0,0], [0,0,0]);
-axis([-2 2 0 4]);
 
 % Constants
 ROBOT_MOVEMENT_DEFS = ['ROBOT_STRAFE', 'ROBOT_STRAFE2', 'ROBOT_SLIDE',...
@@ -47,7 +46,7 @@ currentState = 0;
 
 % Lowpass for ball pos
 
-filterLen = 16;
+filterLen = 8;
 ballSpeedFilter = zeros(filterLen,2);
 filterInd = 1;
 
@@ -88,15 +87,13 @@ while running
     ballSpeedFilter(mod(filterInd, filterLen)+1,:) = ballVelocity;
     ballVelocity = mean(ballSpeedFilter,1);
     
-    set(hand, 'XData', [ball(1) robotPos(1) ball(1)+ballVelocity(1)]);
-    set(hand, 'YData', [ball(2) robotPos(2) ball(2)+ballVelocity(2)]);
-    set(hand, 'CData', [[255 0 0]; [0 255 0]; [0 0 255]]);
+    set(hand, 'XData', [ball(1) robotPos(1)])
     
-    if filterInd > filterLen
+    if filterInd > 8
         if (abs(ballVelocity(1)) > 0.4 || abs(ballVelocity(2)) > 0.4)
             if (abs(ballVelocity(1)) <= abs(lastBallVelocity(1)) || ...
                     abs(ballVelocity(2)) <= abs(lastBallVelocity(2)))
-                [ballFinalPos, ballFinalTime] = getBallFinalPos(ballVelocity, ballInitialPos);
+                [ballFinalPos, ballFinalTime] = getBallFinalPos(ballVelocity, ballInitialPos)
                 currentState = 3;
             end
         end
