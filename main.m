@@ -118,25 +118,31 @@ while running
       end
       if (abs(requiredDistance) > ROBOT_FOOT_WIDTH)
         inds = find(ROBOT_MOVEMENT_DISTANCES > abs(requiredDistance));
-        ind = inds(1);
-        for i=2:length(inds)
-          if (ROBOT_MOVEMENT_TIMES(inds(i)) < ballFinalTime &&...
-              ROBOT_MOVEMENT_TIMES(inds(i)) > ROBOT_MOVEMENT_TIMES(ind))
-            ind = inds(i);
+        if isempty(inds)
+          action = 'ROBOT_SLIDE_THROW';
+          currentState = 4;
+        else
+          ind = inds(1);
+          for i=2:length(inds)
+            if (ROBOT_MOVEMENT_TIMES(inds(i)) < ballFinalTime &&...
+                ROBOT_MOVEMENT_TIMES(inds(i)) > ROBOT_MOVEMENT_TIMES(ind))
+              ind = inds(i);
+            end
           end
+          action = ROBOT_MOVEMENT_DEFS(ind);
+          currentState = 4;
         end
-        action = ROBOT_MOVEMENT_DEFS(ind);
-        disp(action)
-        currentState = 4;
       else
         disp('Ball will hit robot, no action needed')
         currentState = 0;
       end
-    end
+      end
+    
     
   elseif (currentState == 4)
     % Perform determined action
-    
+    disp(action)
+
     if strcmp(direction, 'left')
       switch action
         case 'ROBOT_STRAFE'
