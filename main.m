@@ -106,7 +106,6 @@ while running
         ballPosFilter(mod(filterInd, filterLen)+1,:) = ball;
         filterInd = filterInd + 1;
     end
-    ballVelocity = mean(ballSpeedFilter,1);
     
     set(hand, 'XData', [ball(1) robotPos(1) ball(1)+ballVelocity(1)]);
     set(hand, 'YData', [ball(2) robotPos(2) ball(2)+ballVelocity(2)]);
@@ -149,8 +148,9 @@ while running
             disp('broke')
             break
           end
+          action = ROBOT_MOVEMENT_DEFS(ind);
+          currentState = 4;
         end
-        currentState = 4;
       else
         disp('Ball will hit robot, no action needed')
         currentState = 0;
@@ -160,7 +160,8 @@ while running
     
   elseif (currentState == 4)
     % Perform determined action
-    
+    disp(action)
+
     if strcmp(direction, 'left')
       switch ind
         case 1
