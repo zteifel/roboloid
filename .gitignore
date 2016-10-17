@@ -36,3 +36,6 @@
 # Mac bullshit
 *.DS_Store
 *.suo
+
+# Windows bullshit
+*.asv

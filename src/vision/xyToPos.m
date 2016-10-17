@@ -1,4 +1,4 @@
-function pos = xyToPos(inCoord, camAng, camH, camRes)
+function [pos,gamma] = xyToPos(inCoord, camAng, camH, camRes)
 FOVx = 70.58;
 FOVy = 55.92;
 
@@ -13,7 +13,8 @@ yPos = camH*(tand(camAng+gammaY));
 r = sqrt(camH^2 + yPos^2);
 xPos = r * tand(gammaX);
 
-[gammaX, gammaY, xPos, yPos, inCoord]
+[gammaX, gammaY, xPos, yPos, inCoord];
 
+gamma = [gammaX, gammaY];
 pos = [xPos yPos];
 

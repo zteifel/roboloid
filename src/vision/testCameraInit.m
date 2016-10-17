@@ -1,7 +1,7 @@
 clear camobj
 clear cam
 close all
-camobj = webcam(2);
+camobj = webcam(1);
 %camobj.ExposureMode = 'manual';
 %camobj.Exposure = -4;
 
