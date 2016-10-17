@@ -148,7 +148,7 @@ while running
             disp('broke')
             break
           end
-          action = ROBOT_MOVEMENT_DEFS(ind);
+          action = ind;
           currentState = 4;
         end
       else
