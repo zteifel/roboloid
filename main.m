@@ -121,7 +121,6 @@ while running
         currentState = 3;
         
     end
-    %ballVelocity = getBallVelocity();
     dt = toc;
   elseif (currentState == 3)
     % Determine movement needed
@@ -131,7 +130,6 @@ while running
       currentState = 0;
     else
       action = '';
-      % QUESTION: WHICH ORIENTATION IS THE COORDINATE SYSTEM?
       requiredDistance = ballFinalPos(1) - robotInitialPos(1);
       if requiredDistance < 0
         direction = 'right';
@@ -145,7 +143,6 @@ while running
           if (ROBOT_MOVEMENT_TIMES(inds(i)) < (ballFinalTime-finalTimeOffset) &&...
               ROBOT_MOVEMENT_TIMES(inds(i)) >= ROBOT_MOVEMENT_TIMES(ind))
             ind = inds(i);
-            disp('broke')
             break
           end
           action = ind;
