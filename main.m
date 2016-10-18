@@ -39,8 +39,8 @@ CAM_ANG                                             = 45;
 ch = 1.30;
 cam = webcam(1);
 cam.resolution = '640x480';
-%cam.ExposureMode = 'manual';
-%cam.Exposure = -3;
+cam.ExposureMode = 'manual';
+cam.Exposure = -4;
 
 dt = inf;
 ballVelocity = [0 0];
@@ -51,7 +51,7 @@ currentState = 0;
 
 % Lowpass for ball pos
 
-filterLen = 8;
+filterLen = 6;
 filterInd = 1;
 
 % States
@@ -71,7 +71,7 @@ while running
     robotPos(2) = robotPos(2) - robotOffset;
     goalCenterPosition = robotPos;
     currentState = 1;
-    filterInd = 0;
+    filterInd = 1;
     ballVelocity = [0 0];
     ballPosFilter = zeros(filterLen,2);
     cpu = 0;
@@ -88,71 +88,82 @@ while running
     % Determine ball velocity and final ball position
     lastBallVelocity = ballVelocity;
     lastPoint = ball;
+    lastBallRaw = ballRaw;
     
     
     pic = snapshot(cam);
-    [ball, robotPos, ballRaw, robotRaw] = findAtAngle(pic, 45, ch);
-    ball = changeCoordinates(ball, goalCenterPosition);
-    robotPos = changeCoordinates(robotPos, goalCenterPosition);
-    robotPos(2) = robotPos(2) - robotOffset;
-    
-    ballVelocity = (ball - lastPoint) / dt;
-    
-    if norm(ballVelocity) > 0.1 %|| ballInMotion
-        ballInMotion  = true;
-        if cpu == 0
-            cpu = cputime;
-        end
-        ballPosFilter(mod(filterInd, filterLen)+1,:) = ball;
-        filterInd = filterInd + 1;
-    end
-    
-    set(hand, 'XData', [ball(1) robotPos(1) ball(1)+ballVelocity(1)]);
-    set(hand, 'YData', [ball(2) robotPos(2) ball(2)+ballVelocity(2)]);
-    set(hand, 'CData', [[255 0 0]; [0 255 0]; [0 0 255]]);
-    
-    if nnz(ballPosFilter) == size(ballPosFilter,1)* size(ballPosFilter,2)
-        ballVelocity = ballPosFilter(end,:) - ballPosFilter(end/2,:)/(filterLen/2*dt)
-        ballVelocity = getVelocityVector(ballPosFilter, ballVelocity);
-        test = cputime;
-        test - cpu
-        [ballFinalPos, ballFinalTime] = getBallFinalPos(ballVelocity, ball)
-        ballInMotion = false;
-        currentState = 3;
+    [ball, robotPos, ballRaw, robotRaw] = findAtAngle(pic, 50, ch);
+    if norm(ballRaw) ~= 0 && norm(lastBallRaw) ~= 0
+        ball = changeCoordinates(ball, goalCenterPosition);
+        robotPos = changeCoordinates(robotPos, goalCenterPosition);
+        robotPos(2) = robotPos(2) - robotOffset;
         
+        ballVelocity = (ball - lastPoint) / dt;
+        
+        if norm(ballVelocity) > 0.05 %|| ballInMotion
+            ballInMotion  = true;
+            if cpu == 0
+                cpu = cputime;
+            end
+            ballPosFilter(filterInd,:) = ball;
+            filterInd = filterInd + 1;
+        end
+        
+        set(hand, 'XData', [ball(1) robotPos(1) ball(1)+ballVelocity(1)]);
+        set(hand, 'YData', [ball(2) robotPos(2) ball(2)+ballVelocity(2)]);
+        set(hand, 'CData', [[255 0 0]; [0 255 0]; [0 0 255]]);
+        
+        if filterInd > filterLen
+            ballVelocity = ballPosFilter(end,:) - ballPosFilter(end-1,:)/dt;
+            ballVelocity = getVelocityVector(ballPosFilter, ballVelocity)
+            test = cputime;
+            test - cpu
+            filterInd = 1;
+            [ballFinalPos, ballFinalTime] = getBallFinalPos(ballVelocity, ball)
+            ballInMotion = false;
+            currentState = 3;
+            
+        end
     end
     dt = toc;
   elseif (currentState == 3)
-    % Determine movement needed
-    
-    if (abs(ballFinalPos(1)) > GOAL_SIZE/2)
-      disp('Ball will miss, no action needed')
-      currentState = 0;
-    else
-      action = '';
-      requiredDistance = ballFinalPos(1) - robotInitialPos(1);
-      if requiredDistance < 0
-        direction = 'right';
+      % Determine movement needed
+      
+      if (abs(ballFinalPos(1)) > GOAL_SIZE/2)
+          disp('Ball will miss, no action needed')
+          close(2)
+          figure(2)
+          scatter(ballPosFilter(:,1),ballPosFilter(:,2))
+          currentState = 0;
       else
-        direction = 'left';
-      end
-      if (abs(requiredDistance) > ROBOT_FOOT_WIDTH)
-        inds = find(ROBOT_MOVEMENT_DISTANCES > abs(requiredDistance));
-        ind = inds(1);
-        for i=1:length(inds)
-          if (ROBOT_MOVEMENT_TIMES(inds(i)) < (ballFinalTime-finalTimeOffset) &&...
-              ROBOT_MOVEMENT_TIMES(inds(i)) >= ROBOT_MOVEMENT_TIMES(ind))
-            ind = inds(i);
-            break
+          action = '';
+          requiredDistance = ballFinalPos(1) - robotInitialPos(1);
+          if requiredDistance < 0
+              direction = 'right';
+          else
+              direction = 'left';
           end
-          action = ind;
-          currentState = 4;
-        end
-      else
-        disp('Ball will hit robot, no action needed')
-        currentState = 0;
-      end
+          if (abs(requiredDistance) > ROBOT_FOOT_WIDTH)
+              inds = find(ROBOT_MOVEMENT_DISTANCES > abs(requiredDistance));
+              ind = inds(1);
+              for i=1:length(inds)
+                  if (ROBOT_MOVEMENT_TIMES(inds(i)) < (ballFinalTime-finalTimeOffset) &&...
+                          ROBOT_MOVEMENT_TIMES(inds(i)) >= ROBOT_MOVEMENT_TIMES(ind))
+                      ind = inds(i);
+                      break
+                  end
+                  action = ind;
+                  currentState = 4;
+              end
+          else
+              disp('Ball will hit robot, no action needed')
+              close(2)
+              figure(2)
+              scatter(ballPosFilter(:,1),ballPosFilter(:,2))
+              currentState = 0;
+          end
       disp('DECISION MADE!!!')
+      currentState = 4;
     end
     
   elseif (currentState == 4)

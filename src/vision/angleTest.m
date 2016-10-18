@@ -6,8 +6,8 @@ ch = 1.30;
 cam = webcam(1);
 cam.resolution = '640x480';
 
-%cam.ExposureMode = 'manual';
-%cam.Exposure = -4;
+cam.ExposureMode = 'manual';
+cam.Exposure = -4;
 
 
 figure()
@@ -30,7 +30,7 @@ filterInd = 1;
 while true
     tic
     pic = snapshot(cam);
-    [ball, robot, ballRaw, robotRaw] = findAtAngle(pic, 45, ch);
+    [ball, robot, ballRaw, robotRaw] = findAtAngle(pic, 50, ch);
     
     goalLine = robot(2);
     ballSpeed = (ball - lastPoint) / dt;

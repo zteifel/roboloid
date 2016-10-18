@@ -32,7 +32,7 @@ classdef Robot < handle
     end
 
     function defaultPosition2(obj, speed)
-      obj.playSequence('default2.mat',speed,1);
+      obj.playSequence('defaultPosition2.mat',speed,1);
     end
 
     function slideLeft(obj)
