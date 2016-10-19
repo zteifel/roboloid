@@ -18,7 +18,7 @@ axis([-2 2 -4 0.5]);
 % Constants
 %ROBOT_MOVEMENT_DEFS = ['ROBOT_STRAFE'; 'ROBOT_STRAFE2'; 'ROBOT_SLIDE';...
 %  'ROBOT_STRAFE_SLIDE'; 'ROBOT_STRAFE2_SLIDE'; 'ROBOT_THROW'; 'ROBOT_SLIDE_THROW'];
-ROBOT_MOVEMENT_DISTANCES = [0.05, 0.11, 0.18, 0.23, 0.31, 0.5, 0.7];
+ROBOT_MOVEMENT_DISTANCES = [0.05, 0.11, 0.23, 0.25, 0.31, 0.5, 0.7];
 ROBOT_MOVEMENT_TIMES = [2.4, 5.0, 0.8, 3.2, 5.8, 1.2, 2.6];
 
 % ROBOT_MOVEMENT_TIMES.('ROBOT_STRAFE')               = 1;
@@ -35,8 +35,8 @@ ROBOT_MARKER_HEIGHT                                 = 0.25;
 
 finalTimeOffset = 0.1;
 % Visuals
-CAM_ANG                                             = 45;
-ch = 1.30;
+CAM_ANG                                             = 50;
+ch = 1.35;
 cam = webcam(1);
 cam.resolution = '640x480';
 cam.ExposureMode = 'manual';
@@ -51,7 +51,7 @@ currentState = 0;
 
 % Lowpass for ball pos
 
-filterLen = 6;
+filterLen = 4;
 filterInd = 1;
 
 % States
@@ -61,12 +61,13 @@ while running
   if (currentState == 0)
     % Set robot in default position, get goal center position,
     % wait for user to place in arena
-    
+    dt = inf;
     robot.defaultPosition2(0.3);
     input('Place robot and ball at starting positions, then press enter to continue\n')
     
     pic = snapshot(cam);
     [ball, robotPos, ballRaw, robotRaw, gamma] = findAtAngle(pic, CAM_ANG, ch);
+    lastPoint = ball;
     robotOffset = tand(CAM_ANG + gamma(2)) * ROBOT_MARKER_HEIGHT;
     robotPos(2) = robotPos(2) - robotOffset;
     goalCenterPosition = robotPos;
@@ -74,7 +75,9 @@ while running
     filterInd = 1;
     ballVelocity = [0 0];
     ballPosFilter = zeros(filterLen,2);
+    times = zeros(1,filterLen);
     cpu = 0;
+    t0 = clock;
     
   elseif (currentState == 1)
     % Initial state; get ball initial position and robot initial position
@@ -92,7 +95,8 @@ while running
     
     
     pic = snapshot(cam);
-    [ball, robotPos, ballRaw, robotRaw] = findAtAngle(pic, 50, ch);
+    picTime = etime(clock, t0);
+    [ball, robotPos, ballRaw, robotRaw] = findAtAngle(pic, CAM_ANG, ch);
     if norm(ballRaw) ~= 0 && norm(lastBallRaw) ~= 0
         ball = changeCoordinates(ball, goalCenterPosition);
         robotPos = changeCoordinates(robotPos, goalCenterPosition);
@@ -102,11 +106,12 @@ while running
         
         if norm(ballVelocity) > 0.05 %|| ballInMotion
             ballInMotion  = true;
-            if cpu == 0
-                cpu = cputime;
-            end
             ballPosFilter(filterInd,:) = ball;
+            times(filterInd) = picTime;
             filterInd = filterInd + 1;
+            sprintf('got Frame, index %i', filterInd)
+        else
+            'dropped frame'
         end
         
         set(hand, 'XData', [ball(1) robotPos(1) ball(1)+ballVelocity(1)]);
@@ -114,10 +119,8 @@ while running
         set(hand, 'CData', [[255 0 0]; [0 255 0]; [0 0 255]]);
         
         if filterInd > filterLen
-            ballVelocity = ballPosFilter(end,:) - ballPosFilter(end-1,:)/dt;
+            ballVelocity = (ballPosFilter(end,:) - ballPosFilter(1,:))/(times(end) - times(1));
             ballVelocity = getVelocityVector(ballPosFilter, ballVelocity)
-            test = cputime;
-            test - cpu
             filterInd = 1;
             [ballFinalPos, ballFinalTime] = getBallFinalPos(ballVelocity, ball)
             ballInMotion = false;
@@ -147,14 +150,18 @@ while running
               inds = find(ROBOT_MOVEMENT_DISTANCES > abs(requiredDistance));
               ind = inds(1);
               for i=1:length(inds)
-                  if (ROBOT_MOVEMENT_TIMES(inds(i)) < (ballFinalTime-finalTimeOffset) &&...
-                          ROBOT_MOVEMENT_TIMES(inds(i)) >= ROBOT_MOVEMENT_TIMES(ind))
+                  if (ROBOT_MOVEMENT_TIMES(inds(i)) < (ballFinalTime-finalTimeOffset))% &&...
+                        %  ROBOT_MOVEMENT_TIMES(inds(i)) >= ROBOT_MOVEMENT_TIMES(ind))
                       ind = inds(i);
+                      currentState = 4;
                       break
+                  else
+                      ind = 6;
+                      currentState = 4;
                   end
-                  action = ind;
-                  currentState = 4;
               end
+              disp('Action chosen:')
+              disp(ind)
           else
               disp('Ball will hit robot, no action needed')
               close(2)
@@ -162,8 +169,6 @@ while running
               scatter(ballPosFilter(:,1),ballPosFilter(:,2))
               currentState = 0;
           end
-      disp('DECISION MADE!!!')
-      currentState = 4;
     end
     
   elseif (currentState == 4)

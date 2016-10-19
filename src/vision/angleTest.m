@@ -2,7 +2,7 @@ close all;
 clear cam;
 clear camobj;
 
-ch = 1.30;
+ch = 1.35;
 cam = webcam(1);
 cam.resolution = '640x480';
 
@@ -41,7 +41,7 @@ while true
     dist = norm(robot - ball);
     
     set(handle, 'CData', pic);
-    set(ann, 'String', dist);
+    set(ann, 'String', ball(2));
     
     set(robHandle, 'XData', robotRaw(1));
     set(robHandle, 'YData', robotRaw(2));
